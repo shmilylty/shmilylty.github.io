@@ -12,7 +12,7 @@
 <li><a href="http://www.cnblogs.com/Primzahl/p/6018158.html" target="_blank" rel="external">PHP处理0e开头md5哈希字符串缺陷/bug</a></li>
 </ul>
 <p>我们选取240610708作为<code>url[0]</code>的值，也就是使str传入的值为<code>url[0]=240610708</code>，此时<code>$url[0] != &#39;QNKCDZO&#39;</code>成立，且<code>md5($url[0]) == md5(&#39;QNKCDZO&#39;)</code>也成立：</p>
-<p><img src="https://sunnyelf.github.io/downloads/2017-09-27-flag.jpg" alt="flag"></p>
+<p><img src="/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/flag.jpg" alt="flag"></p>
 ]]></content>
       
         
@@ -30,12 +30,6 @@
     
   
   
-    
-    <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">root@hackfun:/<span class="comment"># python /tmp/sunnyelf/bio.py</span></div><div class="line">Hi, guys, I am a student of information security professional.</div><div class="line">At the same time I am a CTF enthusiast, be good at Web and Misc.</div><div class="line">At present, I am an information security company internship,</div><div class="line">engaged <span class="keyword">in</span> forensic analysis and penetration testing work.</div><div class="line">root@hackfun<span class="comment"># cd /tmp/sunnyelf/bio; rm -rf *</span></div><div class="line">bash: <span class="built_in">cd</span>: /tmp/sunnyelf/bio: No such file or directory</div><div class="line">...</div><div class="line">... and after a <span class="keyword">while</span> ...</div><div class="line">...</div><div class="line">^C</div><div class="line">Oh,no!...</div></pre></td></tr></table></figure>]]></content>
-    </entry>
     
     <entry>
       <title><![CDATA[link]]></title>
@@ -100,6 +94,12 @@
 <li><a href="http://www.unlost.cn/" target="_blank" rel="external">Unlost Team</a></li>
 </ul>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">root@hackfun:/<span class="comment"># python /tmp/sunnyelf/bio.py</span></div><div class="line">Hi, guys, I am a student of information security professional.</div><div class="line">At the same time I am a CTF enthusiast, be good at Web and Misc.</div><div class="line">At present, I am an information security company internship,</div><div class="line">engaged <span class="keyword">in</span> forensic analysis and penetration testing work.</div><div class="line">root@hackfun<span class="comment"># cd /tmp/sunnyelf/bio; rm -rf *</span></div><div class="line">bash: <span class="built_in">cd</span>: /tmp/sunnyelf/bio: No such file or directory</div><div class="line">...</div><div class="line">... and after a <span class="keyword">while</span> ...</div><div class="line">...</div><div class="line">^C</div><div class="line">Oh,no!...</div></pre></td></tr></table></figure>]]></content>
     </entry>
     
   

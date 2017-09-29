@@ -13,12 +13,12 @@
 <meta property="og:url" content="https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/index.html">
 <meta property="og:site_name" content="Hackfun">
 <meta property="og:description" content="0x00 题目123456789101112131415161718&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&amp;lt;?phperror_reporting(0);if (empty($_GET[&apos;str&apos;])) &amp;#123;    show_source(__FILE__);    die();&amp;#125;else&amp;#123;    include(&apos;flag.php&apos;);">
-<meta property="og:image" content="https://sunnyelf.github.io/downloads/2017-09-27-flag.jpg">
-<meta property="og:updated_time" content="2017-09-29T16:53:48.965Z">
+<meta property="og:image" content="https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/flag.jpg">
+<meta property="og:updated_time" content="2017-09-29T20:00:57.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP CTF tricks parse_str and loose comparison">
 <meta name="twitter:description" content="0x00 题目123456789101112131415161718&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&amp;lt;?phperror_reporting(0);if (empty($_GET[&apos;str&apos;])) &amp;#123;    show_source(__FILE__);    die();&amp;#125;else&amp;#123;    include(&apos;flag.php&apos;);">
-<meta name="twitter:image" content="https://sunnyelf.github.io/downloads/2017-09-27-flag.jpg">
+<meta name="twitter:image" content="https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/flag.jpg">
     
     
         
@@ -145,7 +145,7 @@
 <li><a href="http://www.cnblogs.com/Primzahl/p/6018158.html" target="_blank" rel="external">PHP处理0e开头md5哈希字符串缺陷/bug</a></li>
 </ul>
 <p>我们选取240610708作为<code>url[0]</code>的值，也就是使str传入的值为<code>url[0]=240610708</code>，此时<code>$url[0] != &#39;QNKCDZO&#39;</code>成立，且<code>md5($url[0]) == md5(&#39;QNKCDZO&#39;)</code>也成立：</p>
-<p><img src="https://sunnyelf.github.io/downloads/2017-09-27-flag.jpg" alt="flag"></p>
+<p><img src="/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/flag.jpg" alt="flag"></p>
 
   </div>
 </article>
