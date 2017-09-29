@@ -1,0 +1,1 @@
+https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/

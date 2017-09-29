@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hackfun</title>
+  <icon>https://www.gravatar.com/avatar/fa00ae710729f4b21e97bcbd3734b9cb</icon>
+  <subtitle>JingLing&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://sunnyelf.github.io/"/>
+  <updated>2017-09-29T16:53:48.965Z</updated>
+  <id>https://sunnyelf.github.io/</id>
+  
+  <author>
+    <name>Jing Ling</name>
+    <email>jingling@hackfun.org</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP CTF tricks parse_str and loose comparison</title>
+    <link href="https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/"/>
+    <id>https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/</id>
+    <published>2017-09-29T15:31:11.000Z</published>
+    <updated>2017-09-29T16:53:48.965Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;0x00-题目&quot;&gt;&lt;a href=&quot;#0x00-题目&quot; class=&quot;headerlink&quot; title=&quot;0x00 题目&quot;&gt;&lt;/a&gt;0x00 题目&lt;/h2&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+    
+      <category term="PHP CTF tricks" scheme="https://sunnyelf.github.io/tags/PHP-CTF-tricks/"/>
+    
+      <category term="parse_str" scheme="https://sunnyelf.github.io/tags/parse-str/"/>
+    
+      <category term="loose comparison" scheme="https://sunnyelf.github.io/tags/loose-comparison/"/>
+    
+  </entry>
+  
+</feed>
