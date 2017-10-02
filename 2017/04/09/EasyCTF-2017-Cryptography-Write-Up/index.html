@@ -1,0 +1,315 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="robots" content="index,follow"><meta name="description" content="作者:Jing Ling [https://www.zhihu.com/people/sunnyelf/] 博客:HackFun [https://www.hackfun.org]  #0X04-CRYPTOGRAPHY0X04 CRYPTOGRAPHY #FLIP-MY-LETTERSFLIP MY LETTERS #PROBLEMPROBLEM I dropped my alphabet on"><meta name="keywords" content="cryptography,ctf writeup,easyctf"><meta property="og:type" content="article"><meta property="og:title" content="EasyCTF 2017 Cryptography Write Up"><meta property="og:url" content="https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/index.html"><meta property="og:site_name" content="Hackfun"><meta property="og:description" content="作者:Jing Ling [https://www.zhihu.com/people/sunnyelf/] 博客:HackFun [https://www.hackfun.org]  #0X04-CRYPTOGRAPHY0X04 CRYPTOGRAPHY #FLIP-MY-LETTERSFLIP MY LETTERS #PROBLEMPROBLEM I dropped my alphabet on"><meta property="og:image" content="http://i.imgur.com/TfLaOm8.png"><meta property="og:image" content="http://i.imgur.com/fMMlCbf.png"><meta property="og:image" content="http://i.imgur.com/Xqvx3DH.png"><meta property="og:image" content="http://i.imgur.com/KUnLwxR.png"><meta property="og:image" content="http://chuantu.biz/t5/53/1490633101x2890174314.png"><meta property="og:image" content="http://chuantu.biz/t5/53/1490633885x2890174314.png"><meta property="og:image" content="http://chuantu.biz/t5/53/1490634718x2890174314.png"><meta property="og:updated_time" content="2017-10-02T19:22:31.915Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="EasyCTF 2017 Cryptography Write Up"><meta name="twitter:description" content="作者:Jing Ling [https://www.zhihu.com/people/sunnyelf/] 博客:HackFun [https://www.hackfun.org]  #0X04-CRYPTOGRAPHY0X04 CRYPTOGRAPHY #FLIP-MY-LETTERSFLIP MY LETTERS #PROBLEMPROBLEM I dropped my alphabet on"><meta name="twitter:image" content="http://i.imgur.com/TfLaOm8.png"><meta name="twitter:creator" content="@jinglingbiaodi"><link rel="publisher" href="https://plus.google.com/117450799036676139034"><meta property="fb:admins" content="jinglingbiaodi"><meta property="fb:app_id" content="jinglingbiaodi"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><title>EasyCTF 2017 Cryptography Write Up</title><link rel="stylesheet" href="/css/style.css"><link rel="alternate" href="/atom.xml" title="Hackfun - | Secblog | Pentest | Auditing | Sectool | CTF Write-up" type="application/atom+xml"></head><body><div id="header-post"><a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a> <a id="top-icon-tablet" href="#" onclick='$("html, body").animate({scrollTop:0},"fast")' style="display:none"><i class="fa fa-chevron-up fa-lg"></i></a> <span id="menu"><span id="nav"><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/link/">Link</a></li><li><a href="/archives/">Archives</a></li><li><a href="http://github.com/sunnyelf">Projects</a></li></ul></span><br><span id="actions"><ul><li><a class="icon" href="/2017/04/09/EasyCTF-2017-Web-Write-Up/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class="icon" href="/2017/04/09/EasyCTF-2017-Forensics-Write-Up/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class="icon" href="#" onclick='$("html, body").animate({scrollTop:0},"fast")'><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id="i-prev" class="info" style="display:none">Previous post</span> <span id="i-next" class="info" style="display:none">Next post</span> <span id="i-top" class="info" style="display:none">Back to top</span> <span id="i-share" class="info" style="display:none">Share post</span></span><br><div id="share" style="display:none"><ul><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&text=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&is_video=false&description=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=EasyCTF 2017 Cryptography Write Up&body=Check out this article: https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/"><i class="fa fa-envelope" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-get-pocket" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-reddit" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-stumbleupon" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-digg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.tumblr.com/share/link?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&name=EasyCTF 2017 Cryptography Write Up&description=&lt;p&gt;作者:&lt;a href=&#34;https://www.zhihu.com/people/sunnyelf/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;Jing Ling&lt;/a&gt;&lt;br&gt;博客:&lt;a href=&#34;https://www.hackfun.org&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;HackFun&lt;/a&gt;&lt;/p&gt;&lt;h1 id=&#34;0x04-Cryptography&#34;&gt;&lt;a href=&#34;#0x04-Cryptography&#34; class=&#34;headerlink&#34; title=&#34;0x04 Cryptography&#34;&gt;&lt;/a&gt;0x04 Cryptography&lt;/h1&gt;&lt;h2 id=&#34;Flip-My-Letters&#34;&gt;&lt;a href=&#34;#Flip-My-Letters&#34; class=&#34;headerlink&#34; title=&#34;Flip My Letters&#34;&gt;&lt;/a&gt;Flip My Letters&lt;/h2&gt;&lt;h3 id=&#34;problem&#34;&gt;&lt;a href=&#34;#problem&#34; class=&#34;headerlink&#34; title=&#34;problem&#34;&gt;&lt;/a&gt;problem&lt;/h3&gt;&lt;p&gt;I dropped my alphabet on its head, can you help me reassemble it? &lt;code&gt;easyctf{r_wlmg_vevm_mvvw_zm_zhxrr_gzyov}&lt;/code&gt;&lt;/p&gt;"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li></ul></div><div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-Cryptography"><span class="toc-number">1.</span> <span class="toc-text">0x04 Cryptography</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flip-My-Letters"><span class="toc-number">1.1.</span> <span class="toc-text">Flip My Letters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">1.1.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clear-and-Concise-Commentary-on-Caesar-Cipher"><span class="toc-number">1.2.</span> <span class="toc-text">Clear and Concise Commentary on Caesar Cipher</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA1"><span class="toc-number">1.3.</span> <span class="toc-text">RSA1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let-Me-Be-Frank"><span class="toc-number">1.4.</span> <span class="toc-text">Let Me Be Frank</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-3"><span class="toc-number">1.4.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-3"><span class="toc-number">1.4.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA2"><span class="toc-number">1.5.</span> <span class="toc-text">RSA2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-4"><span class="toc-number">1.5.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-4"><span class="toc-number">1.5.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decode-Me"><span class="toc-number">1.6.</span> <span class="toc-text">Decode Me</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-5"><span class="toc-number">1.6.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-5"><span class="toc-number">1.6.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash-on-Hash"><span class="toc-number">1.7.</span> <span class="toc-text">Hash on Hash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-6"><span class="toc-number">1.7.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-6"><span class="toc-number">1.7.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-3"><span class="toc-number">1.8.</span> <span class="toc-text">RSA 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-7"><span class="toc-number">1.8.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-7"><span class="toc-number">1.8.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diffie-cult"><span class="toc-number">1.9.</span> <span class="toc-text">Diffie-cult</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-8"><span class="toc-number">1.9.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-8"><span class="toc-number">1.9.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Security-Through-Obscurity"><span class="toc-number">1.10.</span> <span class="toc-text">Security Through Obscurity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-9"><span class="toc-number">1.10.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-9"><span class="toc-number">1.10.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lost-Seed"><span class="toc-number">1.11.</span> <span class="toc-text">Lost Seed</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-10"><span class="toc-number">1.11.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-10"><span class="toc-number">1.11.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listen-Closely"><span class="toc-number">1.12.</span> <span class="toc-text">Listen Closely</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-11"><span class="toc-number">1.12.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-11"><span class="toc-number">1.12.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Genius"><span class="toc-number">1.13.</span> <span class="toc-text">Genius</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-12"><span class="toc-number">1.13.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-12"><span class="toc-number">1.13.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-4"><span class="toc-number">1.14.</span> <span class="toc-text">RSA 4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-13"><span class="toc-number">1.14.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-13"><span class="toc-number">1.14.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Premium-RSA"><span class="toc-number">1.15.</span> <span class="toc-text">Premium RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-14"><span class="toc-number">1.15.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-14"><span class="toc-number">1.15.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Paillier-Service"><span class="toc-number">1.16.</span> <span class="toc-text">Paillier Service</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-15"><span class="toc-number">1.16.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-15"><span class="toc-number">1.16.2.</span> <span class="toc-text">solution</span></a></li></ol></li></ol></li></ol></div></span></div><div class="content index width mx-auto px2 my4"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="posttitle" itemprop="name headline">EasyCTF 2017 Cryptography Write Up</h1><div class="meta"><span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><i class="fa fa-user-secret"></i><span itemprop="name">Jing Ling</span> </span><i class="fa fa-calendar"></i><div class="postdate"><time datetime="2017-04-09T02:28:00.000Z" itemprop="datePublished">2017-04-09</time></div><i class="fa fa-eye"></i><span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span><div class="article-tag"><i class="fa fa-tags"></i> <a class="tag-link" href="/tags/cryptography/">cryptography</a>, <a class="tag-link" href="/tags/ctf-writeup/">ctf writeup</a>, <a class="tag-link" href="/tags/easyctf/">easyctf</a></div></div></header><div class="content" itemprop="articleBody"><p>作者:<a href="https://www.zhihu.com/people/sunnyelf/" target="_blank" rel="external">Jing Ling</a><br>博客:<a href="https://www.hackfun.org" target="_blank" rel="external">HackFun</a></p><h1 id="0x04-Cryptography"><a href="#0x04-Cryptography" class="headerlink" title="0x04 Cryptography"></a>0x04 Cryptography</h1><h2 id="Flip-My-Letters"><a href="#Flip-My-Letters" class="headerlink" title="Flip My Letters"></a>Flip My Letters</h2><h3 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h3><p>I dropped my alphabet on its head, can you help me reassemble it? <code>easyctf{r_wlmg_vevm_mvvw_zm_zhxrr_gzyov}</code></p><a id="more"></a><h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>使用了简单的替换的加密方法，每个字母被对应另一个字母替换，使用基于字典的词频分析在线网站<a href="http://quipqiup.com/" target="_blank" rel="external">quipqiup</a>解出flag。</p><p><img src="http://i.imgur.com/TfLaOm8.png" alt=""></p><h2 id="Clear-and-Concise-Commentary-on-Caesar-Cipher"><a href="#Clear-and-Concise-Commentary-on-Caesar-Cipher" class="headerlink" title="Clear and Concise Commentary on Caesar Cipher"></a>Clear and Concise Commentary on Caesar Cipher</h2><h3 id="problem-1"><a href="#problem-1" class="headerlink" title="problem"></a>problem</h3><p>The flag is in <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/commentary/Commentary.pdf" target="_blank" rel="external">Commentary.pdf</a>. Use lowercase.</p><h3 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h3><p>凯撒密码，给出的文档值得一看，找到文档中<code>RNFLPGS{LBHTBGVG}</code>，凯撒密码<a href="https://planetcalc.com/1434/" target="_blank" rel="external">在线解密</a><br><img src="http://i.imgur.com/fMMlCbf.png" alt=""></p><p>最终flag为<code>easyctf{yougotit}</code></p><h2 id="RSA1"><a href="#RSA1" class="headerlink" title="RSA1"></a>RSA1</h2><h3 id="problem-2"><a href="#problem-2" class="headerlink" title="problem"></a>problem</h3><p>I found somebody’s notes on their private RSA! Help me crack <a href="https://github.com/EasyCTF/easyctf-2017-problems/tree/master/rsa1" target="_blank" rel="external">this</a>.</p><h3 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h3><p><a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html" target="_blank" rel="external">RSA算法原理</a></p><p><a href="https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95" target="_blank" rel="external">扩展欧几里得算法</a></p><p><a href="https://github.com/sunnyelf/libnum" target="_blank" rel="external">libnum模块</a></p><pre><code>import libnum
+p = 33499881069427614105926941260008415630190853527846401734073924527104092366847259
+q = 34311544767652906613104559081988349779622789386528780506962212898921316785995851
+e = 65537
+c = 43465248299278658712013216049003172427898782261990372316282214376041873514481386908793943532363461126240609464283533882761307749486816342864113338277082746552
+n = p * q
+phi = (p - 1) * (q - 1)
+d = libnum.modular.invmod(e, phi)
+print libnum.n2s(pow(c, d, n)) #easyctf{wh3n_y0u_h4ve_p&amp;q_RSA_iz_ez_7829d89f}
+</code></pre><h2 id="Let-Me-Be-Frank"><a href="#Let-Me-Be-Frank" class="headerlink" title="Let Me Be Frank"></a>Let Me Be Frank</h2><h3 id="problem-3"><a href="#problem-3" class="headerlink" title="problem"></a>problem</h3><p>I was talking to one of my friends but I couldn’t quite understand what he was saying. I think it might be important so here it is: <code>Nwh whdjwh qm uepen, T tjb fsmt tixgi jsrsh sigm gs mpzp xwqf iahxpv iw fslkt. pehgpxf{qtextz_glacz_elt_neinrw_qsg_bums_dcp}</code></p><h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h3><p>维吉尼亚密码<a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="external">解密</a></p><p><img src="http://i.imgur.com/Xqvx3DH.png" alt=""></p><h2 id="RSA2"><a href="#RSA2" class="headerlink" title="RSA2"></a>RSA2</h2><h3 id="problem-4"><a href="#problem-4" class="headerlink" title="problem"></a>problem</h3><p>Some more RSA! This time, there’s no P and Q… <a href="https://github.com/EasyCTF/easyctf-2017-problems/tree/master/rsa2" target="_blank" rel="external">this</a>.</p><h3 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h3><p><a href="https://sourceforge.net/projects/yafu/" target="_blank" rel="external">yafu</a>- Automated integer factorization</p><pre><code>yafu-x64.exe factor(266965481915457805187702917726550329693157)
+...snip...
+***factors found***
+P21 = 458070420083487550883
+P21 = 582804455845022449879
+</code></pre><hr><pre><code>import libnum
+
+n = 266965481915457805187702917726550329693157
+p = 458070420083487550883
+q = 582804455845022449879
+e = 65537
+c = 78670065603555615007383828728708393504251
+
+phi = (p - 1) * (q - 1)
+d = libnum.modular.invmod(e, phi)
+print libnum.n2s(pow(c, d, n)) #flag{l0w_n_0eb6}
+</code></pre><h2 id="Decode-Me"><a href="#Decode-Me" class="headerlink" title="Decode Me"></a>Decode Me</h2><h3 id="problem-5"><a href="#problem-5" class="headerlink" title="problem"></a>problem</h3><p>Someone I met today told me that they had a perfect encryption method. To prove that there is no such thing, I want you to decrypt this encrypted flag he gave me.</p><h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution"></a>solution</h3><pre><code>import base64
+
+with open(&apos;encrypted_flag.txt&apos;) as file:
+    data = file.read()
+    while True:
+        if &apos;easyctf&apos; not in data:
+            data = base64.b64decode(data)
+        else:
+            break
+    print(data) # easyctf{what_1s_l0v3_bby_don7_hurt_m3}
+</code></pre><h2 id="Hash-on-Hash"><a href="#Hash-on-Hash" class="headerlink" title="Hash on Hash"></a>Hash on Hash</h2><h3 id="problem-6"><a href="#problem-6" class="headerlink" title="problem"></a>problem</h3><p>There’s a lot of hex strings here. Maybe they’re hiding a message? <a href="https://github.com/EasyCTF/easyctf-2017-problems/raw/master/hash-on-hash/hexstrings.txt" target="_blank" rel="external">hexstrings</a></p><h3 id="solution-6"><a href="#solution-6" class="headerlink" title="solution"></a>solution</h3><pre><code>import hashlib
+
+md5 = {}
+string = &apos;&apos;
+
+for x in xrange(0, 256):
+    char = chr(x)
+    md5_obj = hashlib.md5()
+    md5_obj.update(char)
+    md5_str = md5_obj.hexdigest()
+    md5[md5_str] = char
+
+with open(&apos;hexstrings.txt&apos;) as file:
+    while True:
+        line = file.readline().replace(&apos;\n&apos;, &apos;&apos;)
+        if len(line) == 0:
+            break
+        string += md5[line]
+print string # easyctf{1_h0p3_y0u_d1dn7_d0_7h47_by_h4nd}
+</code></pre><h2 id="RSA-3"><a href="#RSA-3" class="headerlink" title="RSA 3"></a>RSA 3</h2><h3 id="problem-7"><a href="#problem-7" class="headerlink" title="problem"></a>problem</h3><p>We came across another <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/rsa3/rsa3" target="_blank" rel="external">message</a> that follows the same cryptographic schema as those other RSA messages. Take a look and see if you can crack it.</p><h3 id="solution-7"><a href="#solution-7" class="headerlink" title="solution"></a>solution</h3><pre><code>λ yafu-x64.exe factor(1172115235823606152023154654763747932660073385647694278339165126116107393252225152886841069176950866458540922555424233427042989493814327572078420 5110462278896087432260439082955593874915727686637956899)
+
+
+fac: factoring 11721152358236061520231546547637479326600733856476942783391651261161073932522251528868410691769508664585409225554242334270429894938143275720784205110462278896087432260439082955593874915727686637956899
+fac: using pretesting plan: normal
+fac: no tune info: using qs/gnfs crossover of 95 digits
+div: primes less than 10000
+fmt: 1000000 iterations
+Total factoring time = 0.3556 seconds
+
+
+***factors found***
+
+P100 = 3423616853305296708261404925903697485956036650315221001507285374258954087994492532947084586412780871
+P100 = 3423616853305296708261404925903697485956036650315221001507285374258954087994492532947084586412780869
+
+ans = 1
+</code></pre><hr><pre><code>import libnum
+
+n = 11721152358236061520231546547637479326600733856476942783391651261161073932522251528868410691769508664585409225554242334270429894938143275720784205110462278896087432260439082955593874915727686637956899
+p = 3423616853305296708261404925903697485956036650315221001507285374258954087994492532947084586412780871
+q = 3423616853305296708261404925903697485956036650315221001507285374258954087994492532947084586412780869
+e = 65537
+c = 2907995727224121244474109148869412603986746589983095760953378907471772983106265015352351411281256847387789301815094608746590512178894738862276459859204020010443067567963450732279228357933677075986407
+
+phi = (p - 1) * (q - 1)
+d = libnum.modular.invmod(e, phi)
+print libnum.n2s(pow(c, d, n)) # easyctf{tw0_v3ry_merrry_tw1n_pr1m35!!_417c0d}
+</code></pre><p>推荐文章：<a href="http://bobao.360.cn/learning/detail/3058.html" target="_blank" rel="external">CTF中RSA的常见攻击方法</a></p><h2 id="Diffie-cult"><a href="#Diffie-cult" class="headerlink" title="Diffie-cult"></a>Diffie-cult</h2><h3 id="problem-8"><a href="#problem-8" class="headerlink" title="problem"></a>problem</h3><p>I just intercepted some odd <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/diffie-cult/messages.txt" target="_blank" rel="external">messages.txt</a>. It appears to be a Diffie-hellman protocol, but my math isn’t good enough to figure out what the final shared key is. Help! (The answer is a number. There is no <code>easyctf{}</code>)<br>Hint: Wikipedia explains Diffie-hellman pretty well.</p><h3 id="solution-8"><a href="#solution-8" class="headerlink" title="solution"></a>solution</h3><pre><code>g^a mod p = 421049228295820
+g^b mod p = 105262307073955
+p = 442101689710611
+</code></pre><p>如果不知道Diffie-Hellman密钥交换算法可以先看：</p><p><a href="http://www.cnblogs.com/chenny7/p/6093207.html" target="_blank" rel="external">Diffie-Hellman密钥交换算法</a></p><p><a href="http://www.cnblogs.com/si812cn/archive/2009/11/26/1611272.html" target="_blank" rel="external">Diffie-Hellman密钥交换算法及其优化</a></p><p>题目的意思大概就是想让我们求出密钥K，Diffie-Hellman密钥交换算法的有效性依赖于计算离散对数的难度（<a href="https://www.zhihu.com/question/26030513" target="_blank" rel="external">知乎-离散对数为什么是难题？</a>），这里p较小且这题给的<code>g^a mod p</code>和<code>g^b mod p</code>以及<code>p</code>都比较巧（<code>g^a mod p</code>即使A发送给B的值，而<code>g^b mod p</code>是B发送给A的值），为什么比较巧呢，我们在<a href="http://www.factordb.com/" target="_blank" rel="external">素数库</a>找到他们的标准分解式。</p><pre><code>g^a mod p = 421049228295820 = 2^2 · 5 · 17 · 19^3 · 37 · 47^4 
+g^b mod p = 105262307073955 = 5 · 17 · 19^3 · 37 · 47^4
+p = 442101689710611 = 3 · 7 · 17 · 19^3 · 37 · 47^4
+</code></pre><p>现在令<code>n = 17 · 19^3 · 37 · 47^4</code>，那么就有：</p><pre><code>g^a mod 21n = 20n
+g^b mod 21n = 5n
+</code></pre><p>我们把<code>g^a mod 21n = 20n</code>化简一下即：<code>g^a mod 21n = -n</code>，因为有<code>20n mod 21n = -n</code>，至于原理可以看一下密码学基础。</p><p>根据Diffie-Hellman密钥交换协议:</p><p><img src="http://i.imgur.com/KUnLwxR.png" alt=""></p><p>我们求的密钥K等于：<code>K = (（g ^ a）mod p)^b mod p</code></p><p>也就是:<code>K = (（g ^ a）mod 21n)^b mod 21n</code>，而前面已求过<code>g^a mod 21n = -n</code>，所以<code>K = (-n)^b mod 21n</code>，现在只有b的值不知道，不过我们可以以b自变量的值为变量研究因变量K的变化情况：</p><pre><code>n = 17 * (19 ** 3) * 37 * (47 ** 4)
+p = 21 * n
+for b in xrange(1,10):
+    k = (-n) ** b % p
+    print(&apos;k = (-n)^%d mod p = %d&apos; %(b, k))
+</code></pre><hr><pre><code>K = (-n)^b mod 21n
+k = (-n)^1 mod p = 421049228295820
+k = (-n)^2 mod p = 42104922829582
+k = (-n)^3 mod p = 357891844051447
+k = (-n)^4 mod p = 168419691318328
+k = (-n)^5 mod p = 105262307073955
+k = (-n)^6 mod p = 231577075562701
+k = (-n)^7 mod p = 421049228295820
+k = (-n)^8 mod p = 42104922829582
+k = (-n)^9 mod p = 357891844051447
+</code></pre><p>可以看到当b = 7又开始循环，所以K的可能值有6个，最后提交验证K为<code>421049228295820</code>。</p><h2 id="Security-Through-Obscurity"><a href="#Security-Through-Obscurity" class="headerlink" title="Security Through Obscurity"></a>Security Through Obscurity</h2><h3 id="problem-9"><a href="#problem-9" class="headerlink" title="problem"></a>problem</h3><p>I’ve never seen such a cryptosystem before! It looks like a public key cryptosystem, though… Could you help me crack it?</p><p><a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/security-through-obscurity/encrypt.sage" target="_blank" rel="external">encrypt.sage</a><br><a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/security-through-obscurity/publickey_and_ciphertext.txt" target="_blank" rel="external">publickey and ciphertext.txt</a></p><h3 id="solution-9"><a href="#solution-9" class="headerlink" title="solution"></a>solution</h3><p><a href="http://www.sagemath.org/zh" target="_blank" rel="external">SageMath</a> 是一个基于GPL协议的开源数学软件。它使用Python作为通用接口，将现有的许多开源软件包整合在一起，构建一个统一的计算平台。<br>我们的目标：创建一个有活力的自由开源软件以替代Magma，Maple，Mathematica和Matlab。</p><p><a href="http://ai7.org/wp/html/682.html" target="_blank" rel="external">中文版的SageMath入门手册</a></p><p><a href="http://sagecell.sagemath.org/" target="_blank" rel="external">sage代码在线运行</a></p><p><a href="https://wenku.baidu.com/view/13c36ec09ec3d5bbfd0a74c8.html" target="_blank" rel="external">信息安全数学基础-有限域</a></p><p><a href="https://en.wikipedia.org/wiki/Nth_root_algorithm" target="_blank" rel="external">nth root algorithm</a></p><p>encrypt.sage：</p><pre><code>p = 196732205348849427366498732223276547339
+primelist = [2,3,5,7,11,13,17,19,23,29,31,37,43,47,53,59]
+secret = REDACTED
+
+def calc_root(num, mod, n):
+    f = GF(mod)
+    temp = f(num)
+    return temp.nth_root(n)
+
+def gen_v_list(primelist, p, secret):
+    a = []
+    for prime in primelist:
+        a.append(calc_root(prime, p, secret))
+    return a
+
+def decodeInt(i, primelist):
+    pl = sorted(primelist)[::-1]
+    out = &apos;&apos;
+    for j in pl:
+        if i%j == 0:
+            out += &apos;1&apos;
+        else:
+            out += &apos;0&apos;
+    return out
+
+def bin2asc(b):
+    return hex(int(b,2)).replace(&apos;0x&apos;,&apos;&apos;).decode(&apos;hex&apos;)
+
+
+message = REDACTED
+chunks = []
+for i in range(0,len(message),2):
+    chunks += [message[i:i+2]]
+
+vlist = gen_v_list(primelist,p,secret)
+print(vlist)
+for chunk in chunks:
+    binarized = bin(int(chunk.encode(&apos;hex&apos;),16)).replace(&apos;0b&apos;,&apos;&apos;).zfill(16)[::-1] #lsb first
+    enc = 1
+    for bit in range(len(binarized)):
+        enc *= vlist[bit]**int(binarized[bit])
+    enc = enc%p
+    print(enc)
+</code></pre><p>publickey and ciphertext.txt：</p><pre><code>p = 196732205348849427366498732223276547339
+vlist = [186290890175539004453897585557650819247, 75402298316736094226532182518108134406, 125495142022496378270547998225256386407, 97774267687164931514953833940936099082, 101991197227908059637463567354647370660, 153833851791059142883915934225837717549, 57404874013093467650483424580890463792, 21385179362692238453302681296928238570, 73119997627509808412069264512026243174, 187307466063352771786747395191866088255, 99696708971915885525739992181010504930, 35400960589917132410614021764179554582, 165004028169785856134522269878963539096, 23921651712221317415895203722083962980, 101282552285744196401422074083408273639, 36527324251768098978171373433957274016]
+ciphertext = [10804437392992369932709952388461430442, 176193785024128365464527424154073333243, 149270645998191619421663334736314262928, 84083279828403258970202482839973583723, 105542809657403162156368566034837560781, 170535468317794277192003839288646533914, 1709561989051017137832962458645802494, 30208132812353075834728747743616689590, 179552149608863037880916374596103803214, 146319871444551859531557724256502213689, 94266034977624098660397183255753485858, 59624105602644297614582310044425417646, 150207980679551836987813576795479579005, 47189940152625174480564945084004798024, 60923399917552243674613186036841652885, 56060552313063913798237738953734149992, 153365453785043472981157196787373992079, 97439800863356756323659264743487719966, 105572255903480949865247928773026019148, 47189940152625174480564945084004798024, 32547907449246015626932936731350157592, 97471053149217334376536988401195572824, 156999991149661497460742185971412527182, 97705058765750947378422286408948780428, 56123764944636237849915747435965967337, 180380146745295930385428990214293723238, 178014626944341285289827069179285260436, 99504741454750536629756505680249931430]
+</code></pre><p>大致看一下程序，理一下代码逻辑，message就是我们要求的明文，然后被分成每2个字符为一组添加到chunks列表：</p><pre><code>message = REDACTED
+chunks = []
+for i in range(0,len(message),2):
+    chunks += [message[i:i+2]]
+</code></pre><p>vlist已经给了，所以不用再去求<code>secret</code>，接下来就是每2个字符简单的二值化处理再倒序，之后就是16次循环加密处理。</p><pre><code>vlist = gen_v_list(primelist,p,secret)
+print(vlist)
+for chunk in chunks:
+    binarized = bin(int(chunk.encode(&apos;hex&apos;),16)).replace(&apos;0b&apos;,&apos;&apos;).zfill(16)[::-1] #lsb first
+    enc = 1
+    for bit in range(len(binarized)):
+        enc *= vlist[bit]**int(binarized[bit])
+    enc = enc%p
+    print(enc)
+</code></pre><p>加密结果已经给了，一共28组，所以能推出明文长度为56，我们知道ASCII字符的范围0-255，再从上面的加密代码分析可知，chunk最多就只有<code>256*256=65536</code>种组合，再做16次循环加密处理，也就是说最多1048576（<code>256*256*16</code>）次就能把一组明文穷举出来，计算机对1048576这个次数简直毫无压力，所以上代码：</p><pre><code>p = 196732205348849427366498732223276547339
+vlist = [186290890175539004453897585557650819247, 75402298316736094226532182518108134406, 125495142022496378270547998225256386407, 97774267687164931514953833940936099082, 101991197227908059637463567354647370660, 153833851791059142883915934225837717549, 57404874013093467650483424580890463792, 21385179362692238453302681296928238570, 73119997627509808412069264512026243174, 187307466063352771786747395191866088255, 99696708971915885525739992181010504930, 35400960589917132410614021764179554582, 165004028169785856134522269878963539096, 23921651712221317415895203722083962980, 101282552285744196401422074083408273639, 36527324251768098978171373433957274016]
+ciphertext = [10804437392992369932709952388461430442, 176193785024128365464527424154073333243, 149270645998191619421663334736314262928, 84083279828403258970202482839973583723, 105542809657403162156368566034837560781, 170535468317794277192003839288646533914, 1709561989051017137832962458645802494, 30208132812353075834728747743616689590, 179552149608863037880916374596103803214, 146319871444551859531557724256502213689, 94266034977624098660397183255753485858, 59624105602644297614582310044425417646, 150207980679551836987813576795479579005, 47189940152625174480564945084004798024, 60923399917552243674613186036841652885, 56060552313063913798237738953734149992, 153365453785043472981157196787373992079, 97439800863356756323659264743487719966, 105572255903480949865247928773026019148, 47189940152625174480564945084004798024, 32547907449246015626932936731350157592, 97471053149217334376536988401195572824, 156999991149661497460742185971412527182, 97705058765750947378422286408948780428, 56123764944636237849915747435965967337, 180380146745295930385428990214293723238, 178014626944341285289827069179285260436, 99504741454750536629756505680249931430]
+plaintext = &apos;&apos;
+
+for i in ciphertext:
+    find = False
+    for j in xrange(256):
+        if find:
+            break
+        for k in xrange(256):
+            chunk = chr(j) + chr(k)
+            binarized = bin(int(chunk.encode(&apos;hex&apos;),16)).replace(&apos;0b&apos;,&apos;&apos;).zfill(16)[::-1]
+            enc = 1
+            for bit in range(len(binarized)):
+                enc *= vlist[bit]**int(binarized[bit])
+            enc = enc%p
+            if enc == i:
+                find = True
+                plaintext += chunk
+                break
+print(plaintext) 
+</code></pre><hr><pre><code>flag{i_actu4lly_d0nt_know_th3_name_of_th15_crypt0sy5tem} 
+used time:18.040904s
+</code></pre><h2 id="Lost-Seed"><a href="#Lost-Seed" class="headerlink" title="Lost Seed"></a>Lost Seed</h2><h3 id="problem-10"><a href="#problem-10" class="headerlink" title="problem"></a>problem</h3><p>Every time I encrypt a flag with this <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/lost-seeds/encrypt" target="_blank" rel="external">program</a>, it gives me something <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/lost-seeds/flag.out" target="_blank" rel="external">different</a>.</p><h3 id="solution-10"><a href="#solution-10" class="headerlink" title="solution"></a>solution</h3><pre><code>int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  char v3; // bl@2
+  int result; // eax@4
+  __int64 v5; // rcx@4
+  char v6; // [sp+Bh] [bp-85h]@2
+  int v7; // [sp+Ch] [bp-84h]@1
+  int v8; // [sp+10h] [bp-80h]@1
+  int v9; // [sp+14h] [bp-7Ch]@2
+  FILE *stream; // [sp+18h] [bp-78h]@1
+  char ptr[88]; // [sp+20h] [bp-70h]@1
+  __int64 v12; // [sp+78h] [bp-18h]@1
+
+  v12 = *MK_FP(__FS__, 40LL);
+  stream = fopen(&quot;flag.in&quot;, &quot;r&quot;);
+  fread(ptr, 1uLL, 0x50uLL, stream);
+  fclose(stream);
+  stream = fopen(&quot;flag.out&quot;, &quot;wb&quot;);
+  seed = realrand(&quot;flag.out&quot;, &quot;wb&quot;);
+  v7 = 0;
+  v8 = strlen(ptr);
+  while ( v7 &lt; v8 )
+  {
+    v3 = ptr[v7];
+    v9 = pseudorand();
+    v6 = v3 ^ v9;
+    fwrite(&amp;v6, 1uLL, 1uLL, stream);
+    ++v7;
+  }
+  fclose(stream);
+  result = 0;
+  v5 = *MK_FP(__FS__, 40LL) ^ v12;
+  return result;
+}
+</code></pre><h2 id="Listen-Closely"><a href="#Listen-Closely" class="headerlink" title="Listen Closely"></a>Listen Closely</h2><h3 id="problem-11"><a href="#problem-11" class="headerlink" title="problem"></a>problem</h3><p>We intercepted a secret message, but we can’t tell what it’s saying. Maybe you can help? <a href="https://github.com/EasyCTF/easyctf-2017-problems/blob/master/listen-closely/listenclosely.wav" target="_blank" rel="external">super secret message</a><br>hint: 1, 16, 8000. After you use those, the problem is strictly crypto.</p><h3 id="solution-11"><a href="#solution-11" class="headerlink" title="solution"></a>solution</h3><p><a href="https://writeups.easyctf.com/" target="_blank" rel="external">writeup</a></p><h2 id="Genius"><a href="#Genius" class="headerlink" title="Genius"></a>Genius</h2><h3 id="problem-12"><a href="#problem-12" class="headerlink" title="problem"></a>problem</h3><p>Your boss told you that <a href="http://genius.web.easyctf.com/" target="_blank" rel="external">this</a> team has come up with the cryptographic hash of the future, but something about their operation just seems a little fishy.</p><h3 id="solution-12"><a href="#solution-12" class="headerlink" title="solution"></a>solution</h3><pre><code>8a7fca9234d2f19c8abfcd812971a26c8c510dcaefd5061b191ad41d8b57d0ce631f5074f94b32730d0c025f1d7aacd7
+be1ab1632e4285edc3733b142935c60b90383bad42309f7f6850d2b4250a713d0b2d7a97350465a02554d29d92bfefaf
+d64ddd0de1b187cd670783f5e28d681dd401ed3009d05ce4ef600d364a2c953e4cc801b880dddef59829a5ad08bd8a63
+73d559bc117f816333174e918d0587de5cca214701dbe9f7f42da7bccf074b811292b9d4dc398866ef95869b22b3941e
+78635bc95eaa7662a2ddf3e3d45cf1084f4233d6c396e8a0e6fbf597d07b88178d03f3f7757bdbdaaed60729d08bb180
+b42dad5453b2128a32f6612b13ea5d9fef843bee79633652a6d6ae08e964609f00e883ab809346226dff6887080fb68b
+</code></pre><p>给了6组哈希值，每组96个字符，还提示到了MD5，于是丢<a href="https://crackstation.net/" target="_blank" rel="external">crackstation</a>跑一下：</p><p><img src="http://chuantu.biz/t5/53/1490633101x2890174314.png" alt=""></p><p>简单验证一下：</p><pre><code>md5(like) = be1ab1632e4285edc3733b142935c60b
+md5(ly_s) = d64ddd0de1b187cd670783f5e28d681d
+md5(ng_2) = 73d559bc117f816333174e918d0587de
+md5(have) = b42dad5453b2128a32f6612b13ea5d9f
+</code></pre><p>推测每组就是三个MD5组合的，于是将所有的MD5换行拆分再进行一次查找：</p><p><img src="http://chuantu.biz/t5/53/1490633885x2890174314.png" alt=""></p><p>还有7个没有破解，从上面的都是4位简单的消息，于是把未找出的7个扔<a href="https://md5db.net/" target="_blank" rel="external">MD5库</a>：</p><p><img src="http://chuantu.biz/t5/53/1490634718x2890174314.png" alt=""></p><p>按顺序组合一下：<code>OMG_it_took_like_LITerally_s0oO00_long_2_MAK3_md5_werrk_you_have_no_id34</code><br>提交给了flag：<code>easyctf{OUR_3nCRYpti0n_is_N0T_br0k3n_Ur_brok3n_6c5a390d}</code></p><p>py优雅解决方式：</p><pre><code>import hashlib
+
+hashs = &apos;8a7fca9234d2f19c8abfcd812971a26c8c510dcaefd5061b191ad41d8b57d0ce631f5074f94b32730d0c025f1d7aacd7be1ab1632e4285edc3733b142935c60b90383bad42309f7f6850d2b4250a713d0b2d7a97350465a02554d29d92bfefafd64ddd0de1b187cd670783f5e28d681dd401ed3009d05ce4ef600d364a2c953e4cc801b880dddef59829a5ad08bd8a6373d559bc117f816333174e918d0587de5cca214701dbe9f7f42da7bccf074b811292b9d4dc398866ef95869b22b3941e78635bc95eaa7662a2ddf3e3d45cf1084f4233d6c396e8a0e6fbf597d07b88178d03f3f7757bdbdaaed60729d08bb180b42dad5453b2128a32f6612b13ea5d9fef843bee79633652a6d6ae08e964609f00e883ab809346226dff6887080fb68b&apos;
+
+def get_md5_list(hashs):
+    md5_list = []
+    for x in xrange(0, len(hashs), 32):
+        md5_list.append(hashs[x:x+32])
+    return md5_list
+
+def gen_char_list():
+    char_list = []
+    for x in xrange(48, 58): # 0 ~ 9
+        char_list.append(chr(x))
+    for x in xrange(65, 91): # A ~ Z
+        char_list.append(chr(x))
+    for x in xrange(97, 123): # a ~ z
+        char_list.append(chr(x))
+    char_list.append(&apos;_&apos;) # _
+    return char_list
+
+def brute_force_md5(char_list, md5_list):
+    plain_dict = {}
+    for c1 in char_list:
+        for c2 in char_list:
+            for c3 in char_list:
+                for c4 in char_list:
+                    chars = c1 + c2 + c3 + c4
+                    md5_obj = hashlib.md5()
+                    md5_obj.update(chars)
+                    md5_str = md5_obj.hexdigest()
+                    if md5_str in md5_list:
+                        plain_dict[md5_str] = chars
+    return plain_dict
+
+def get_plain(md5_list, plain_dict):
+    plain = &apos;&apos;
+    for md5 in md5_list:
+        plain += plain_dict[md5]
+    return plain
+
+def main():
+    md5_list = get_md5_list(hashs)
+    char_list = gen_char_list()
+    plain_dict = brute_force_md5(char_list, md5_list)
+    plain = get_plain(md5_list, plain_dict)
+    print(plain)
+
+if __name__ == &apos;__main__&apos;:
+    main()
+</code></pre><h2 id="RSA-4"><a href="#RSA-4" class="headerlink" title="RSA 4"></a>RSA 4</h2><h3 id="problem-13"><a href="#problem-13" class="headerlink" title="problem"></a>problem</h3><p>After doing so much RSA, I finally messed up…. pls help. I encrypted my secret <a href="https://writeups.easyctf.com/files/rsa4.txt" target="_blank" rel="external">message</a> but the decryption isn’t working!!</p><h3 id="solution-13"><a href="#solution-13" class="headerlink" title="solution"></a>solution</h3><p><a href="https://github.com/ValarDragon/CTF-Writeups/tree/master/2017/EasyCTF/RSA%204" target="_blank" rel="external">writeup</a></p><h2 id="Premium-RSA"><a href="#Premium-RSA" class="headerlink" title="Premium RSA"></a>Premium RSA</h2><h3 id="problem-14"><a href="#problem-14" class="headerlink" title="problem"></a>problem</h3><p>My RSA is the greatest. It’s so strong, in fact, that I’ll even give you d! <a href="https://www.easyctf.com/static/d99abfa412f17c8d3229daabd0d6dda800d4f303_ciphertext.txt" target="_blank" rel="external">file</a></p><p>hint: You thought it’d be that simple?</p><h3 id="solution-14"><a href="#solution-14" class="headerlink" title="solution"></a>solution</h3><p><a href="https://github.com/ValarDragon/CTF-Writeups/tree/master/2017/EasyCTF/Premium%20RSA" target="_blank" rel="external">writeup</a></p><h2 id="Paillier-Service"><a href="#Paillier-Service" class="headerlink" title="Paillier Service"></a>Paillier Service</h2><h3 id="problem-15"><a href="#problem-15" class="headerlink" title="problem"></a>problem</h3><p>My friend made some sort of encryption service using the Paillier cryptosystem. Can you get him to encrypt the string easyctf{3ncrypt_m3!} for me? Your flag will be a base 10 integer.</p><p>Access his encryption service at <code>paillier.tcp.easyctf.com 8570</code></p><h3 id="solution-15"><a href="#solution-15" class="headerlink" title="solution"></a>solution</h3><p><a href="https://github.com/ValarDragon/CTF-Writeups/tree/master/2017/EasyCTF/Paillier%20Service" target="_blank" rel="external">writeup</a></p><pre><code># Paillier.py
+import binascii
+
+#Gathered from connecting manually
+# m = 1, r = 1
+g = 76148136246979412868353192826161253341403849263254887278017187958514513340458179944731332795505616407225022188597713956679924138156737337560391522285190471306102238935856085554943425316921717217530405444795878376547349107664015741971592178799088766898531556269231518219697725522509132047243753064371633643298
+
+# m = 2, r = 1
+g2 = 152296272493958825736706385652322506682807698526509774556034375917029026680916359889462665591011232814450044377195427913359848276313474675120783044570380942612204477871712171109886850633843434435060810889591756753094698215328031483943184357598177533797063112538463036439395451045018264094487506128743267286595
+
+expectedG2 = g*g
+
+#Using Factordb, we find that expectedG2-g2 is a perfect square of a prime, which is below
+#http://factordb.com/index.php?id=1100000000882961502
+n = 76148136246979412868353192826161253341403849263254887278017187958514513340458179944731332795505616407225022188597713956679924138156737337560391522285190471306102238935856085554943425316921717217530405444795878376547349107664015741971592178799088766898531556269231518219697725522509132047243753064371633643297
+n2 = n*n
+m2r2 = 642704871773304452155778596282877892451871980828477596157415930594972102473171707034871466334408214634990379265334519095544245651795310239071984348465353456082430791507322024283077057140015173791209040404351064470318177893091562745760770981747716308255111472933684059218100124906239297276402113587510274467857526915676715307055889593001002210535184406398178516901311847346979934161946287183599368736554797730366291587740218078384204696550286009123986874335424671114430592617561047352470044247529967986001239137580719442869043114141323570567593427242451750466586033713111304296116982128148631354597378733690535403149
+#check for no errors
+assert (pow(g,2,n2)*pow(2,n,n2))%n2 == m2r2
+assert (pow(g,2,n2))%n2 == g2
+
+# get int of string easyctf{3ncrypt_m3!}
+goal = b&apos;easyctf{3ncrypt_m3!}&apos;
+hexGoal = str(binascii.hexlify(goal),&apos;utf-8&apos;)
+goal = int(hexGoal,16)
+#print(goal)
+#goal is divisible by 5, so use that for Homomorphic property
+m5r1 = pow(g,5,n2)
+goalDiv5 = goal // 5
+# Now use the Homomorphic property :)
+flagInt = pow(m5r1,goalDiv5,n2)
+print(flagInt)
+</code></pre></div></article><div class="blog-post-comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></div></div><div id="footer-post-container"><div id="footer-post"><div id="nav-footer" style="display:none"><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/link/">Link</a></li><li><a href="/archives/">Archives</a></li><li><a href="http://github.com/sunnyelf">Projects</a></li></ul></div><div id="toc-footer" style="display:none"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-Cryptography"><span class="toc-number">1.</span> <span class="toc-text">0x04 Cryptography</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flip-My-Letters"><span class="toc-number">1.1.</span> <span class="toc-text">Flip My Letters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution"><span class="toc-number">1.1.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clear-and-Concise-Commentary-on-Caesar-Cipher"><span class="toc-number">1.2.</span> <span class="toc-text">Clear and Concise Commentary on Caesar Cipher</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA1"><span class="toc-number">1.3.</span> <span class="toc-text">RSA1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Let-Me-Be-Frank"><span class="toc-number">1.4.</span> <span class="toc-text">Let Me Be Frank</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-3"><span class="toc-number">1.4.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-3"><span class="toc-number">1.4.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA2"><span class="toc-number">1.5.</span> <span class="toc-text">RSA2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-4"><span class="toc-number">1.5.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-4"><span class="toc-number">1.5.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decode-Me"><span class="toc-number">1.6.</span> <span class="toc-text">Decode Me</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-5"><span class="toc-number">1.6.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-5"><span class="toc-number">1.6.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash-on-Hash"><span class="toc-number">1.7.</span> <span class="toc-text">Hash on Hash</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-6"><span class="toc-number">1.7.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-6"><span class="toc-number">1.7.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-3"><span class="toc-number">1.8.</span> <span class="toc-text">RSA 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-7"><span class="toc-number">1.8.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-7"><span class="toc-number">1.8.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diffie-cult"><span class="toc-number">1.9.</span> <span class="toc-text">Diffie-cult</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-8"><span class="toc-number">1.9.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-8"><span class="toc-number">1.9.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Security-Through-Obscurity"><span class="toc-number">1.10.</span> <span class="toc-text">Security Through Obscurity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-9"><span class="toc-number">1.10.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-9"><span class="toc-number">1.10.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lost-Seed"><span class="toc-number">1.11.</span> <span class="toc-text">Lost Seed</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-10"><span class="toc-number">1.11.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-10"><span class="toc-number">1.11.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listen-Closely"><span class="toc-number">1.12.</span> <span class="toc-text">Listen Closely</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-11"><span class="toc-number">1.12.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-11"><span class="toc-number">1.12.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Genius"><span class="toc-number">1.13.</span> <span class="toc-text">Genius</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-12"><span class="toc-number">1.13.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-12"><span class="toc-number">1.13.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-4"><span class="toc-number">1.14.</span> <span class="toc-text">RSA 4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-13"><span class="toc-number">1.14.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-13"><span class="toc-number">1.14.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Premium-RSA"><span class="toc-number">1.15.</span> <span class="toc-text">Premium RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-14"><span class="toc-number">1.15.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-14"><span class="toc-number">1.15.2.</span> <span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Paillier-Service"><span class="toc-number">1.16.</span> <span class="toc-text">Paillier Service</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem-15"><span class="toc-number">1.16.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-15"><span class="toc-number">1.16.2.</span> <span class="toc-text">solution</span></a></li></ol></li></ol></li></ol></div><div id="share-footer" style="display:none"><ul><li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="https://twitter.com/share?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&text=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&is_video=false&description=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="mailto:?subject=EasyCTF 2017 Cryptography Write Up&body=Check out this article: https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="https://getpocket.com/save?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://reddit.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://digg.com/submit?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&title=EasyCTF 2017 Cryptography Write Up"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li><li><a class="icon" href="http://www.tumblr.com/share/link?url=https://sunnyelf.github.io/2017/04/09/EasyCTF-2017-Cryptography-Write-Up/&name=EasyCTF 2017 Cryptography Write Up&description=&lt;p&gt;作者:&lt;a href=&#34;https://www.zhihu.com/people/sunnyelf/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;Jing Ling&lt;/a&gt;&lt;br&gt;博客:&lt;a href=&#34;https://www.hackfun.org&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;HackFun&lt;/a&gt;&lt;/p&gt;&lt;h1 id=&#34;0x04-Cryptography&#34;&gt;&lt;a href=&#34;#0x04-Cryptography&#34; class=&#34;headerlink&#34; title=&#34;0x04 Cryptography&#34;&gt;&lt;/a&gt;0x04 Cryptography&lt;/h1&gt;&lt;h2 id=&#34;Flip-My-Letters&#34;&gt;&lt;a href=&#34;#Flip-My-Letters&#34; class=&#34;headerlink&#34; title=&#34;Flip My Letters&#34;&gt;&lt;/a&gt;Flip My Letters&lt;/h2&gt;&lt;h3 id=&#34;problem&#34;&gt;&lt;a href=&#34;#problem&#34; class=&#34;headerlink&#34; title=&#34;problem&#34;&gt;&lt;/a&gt;problem&lt;/h3&gt;&lt;p&gt;I dropped my alphabet on its head, can you help me reassemble it? &lt;code&gt;easyctf{r_wlmg_vevm_mvvw_zm_zhxrr_gzyov}&lt;/code&gt;&lt;/p&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li></ul></div><div id="actions-footer"><ul><li id="toc"><a class="icon" href="#" onclick='return $("#toc-footer").toggle(),!1'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li><li id="share"><a class="icon" href="#" onclick='return $("#share-footer").toggle(),!1'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li><li id="top" style="display:none"><a class="icon" href="#" onclick='$("html, body").animate({scrollTop:0},"fast")'><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li><li id="menu"><a class="icon" href="#" onclick='return $("#nav-footer").toggle(),!1'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li></ul></div></div></div><footer id="footer"><div class="footer-left">Copyright &copy; 2017 Jing Ling</div><div class="footer-right"><nav><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/link/">Link</a></li><li><a href="/archives/">Archives</a></li><li><a href="http://github.com/sunnyelf">Projects</a></li></ul></nav></div></footer></body></html><link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><link href="https://cdn.bootcss.com/justifiedGallery/3.6.1/css/justifiedGallery.min.css" rel="stylesheet"><script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script><script src="https://cdn.bootcss.com/justifiedGallery/3.6.1/js/jquery.justifiedGallery.min.js"></script><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/main.min.js"></script><script type="text/javascript">var disqus_shortname="sunnyelf";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script>

@@ -3,12 +3,17 @@
 
     <sitemap>
         <loc>https://sunnyelf.github.io/post-sitemap.xml</loc>
-        <lastmod>2017-09-29T20:00:57.124Z</lastmod>
+        <lastmod>2017-10-02T20:02:37.944Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://sunnyelf.github.io/page-sitemap.xml</loc>
         <lastmod>2017-10-01T10:16:43.310Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://sunnyelf.github.io/category-sitemap.xml</loc>
+        <lastmod>2017-10-02T19:22:31.903Z</lastmod>
     </sitemap>
 
     <sitemap>
