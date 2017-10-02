@@ -1073,13 +1073,6 @@
     </url>
 
     <url>
-        <loc>https://sunnyelf.github.io/tags/miscellaneous/</loc>
-        <lastmod>2017-10-02T19:51:01.316Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sunnyelf.github.io/tags/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/</loc>
         <lastmod>2017-10-02T19:51:01.316Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1095,6 +1088,13 @@
 
     <url>
         <loc>https://sunnyelf.github.io/tags/socket%E7%BC%96%E7%A8%8B/</loc>
+        <lastmod>2017-10-02T19:51:01.316Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sunnyelf.github.io/tags/miscellaneous/</loc>
         <lastmod>2017-10-02T19:51:01.316Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
