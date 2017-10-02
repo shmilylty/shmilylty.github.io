@@ -310,6 +310,13 @@
     </url>
 
     <url>
+        <loc>https://sunnyelf.github.io/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/</loc>
+        <lastmod>2017-10-02T19:22:31.607Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sunnyelf.github.io/tags/%E5%8F%96%E8%AF%81/</loc>
         <lastmod>2017-10-02T19:22:31.607Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -332,13 +339,6 @@
 
     <url>
         <loc>https://sunnyelf.github.io/tags/%E5%B7%A5%E5%85%B7/</loc>
-        <lastmod>2017-10-02T19:22:31.607Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sunnyelf.github.io/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/</loc>
         <lastmod>2017-10-02T19:22:31.607Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
