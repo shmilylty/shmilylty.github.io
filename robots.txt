@@ -1,0 +1,2 @@
+User-agent: *
+sitemap: https://sunnyelf.github.io/sitemap.xml
