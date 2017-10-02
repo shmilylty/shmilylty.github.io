@@ -1,2 +1,3 @@
 User-agent: *
-sitemap: https://sunnyelf.github.io/sitemap.xml
+Disallow:
+Sitemap: https://sunnyelf.github.io/sitemap.xml
