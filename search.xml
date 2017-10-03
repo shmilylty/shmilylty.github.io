@@ -2184,6 +2184,35 @@ if __name__ == &apos;__main__&apos;:
     </entry>
     
     <entry>
+      <title><![CDATA[CSAW CTF Qualification Round 2013 Web 200 Nevernote]]></title>
+      <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/</url>
+      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x5b;&#x6e;&#101;&#x76;&#101;&#114;&#110;&#x6f;&#x74;&#x65;&#97;&#x64;&#109;&#105;&#110;&#x40;&#x6e;&#x65;&#118;&#x65;&#114;&#x6e;&#x6f;&#x74;&#101;&#x2e;&#99;&#111;&#109;&#x5d;&#x5b;&#50;&#x5d;">&#x5b;&#x6e;&#101;&#x76;&#101;&#114;&#110;&#x6f;&#x74;&#x65;&#97;&#x64;&#109;&#105;&#110;&#x40;&#x6e;&#x65;&#118;&#x65;&#114;&#x6e;&#x6f;&#x74;&#101;&#x2e;&#99;&#111;&#109;&#x5d;&#x5b;&#50;&#x5d;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ctf </tag>
+            
+            <tag> web </tag>
+            
+            <tag> csaw ctf qualification round 2013 </tag>
+            
+            <tag> referer </tag>
+            
+            <tag> nevernote </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSAW CTF Qualification Round 2013 Web 100 Guess Harder]]></title>
       <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-100-Guess-Harder/</url>
       <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p><a href="http://128.238.66.215" target="_blank" rel="external">http://128.238.66.215</a></p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问链接后，出现提示:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/3960110511.png" alt="CSAW CTF Qualification Round 2013 Web 100 notice.png"></p><p>虽然提示说:你永远猜不到我的密码，但还是随手输入一些弱口令，多次测试不对于是习惯性F12，看到Cookie中admin值为’false’，于是修改为’true’，刷新之后出现flag:</p><pre><code>key{told_ya_you_wouldnt_guess_it}
@@ -2209,35 +2238,6 @@ if __name__ == &apos;__main__&apos;:
             <tag> cookie </tag>
             
             <tag> guess harder </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[CSAW CTF Qualification Round 2013 Web 200 Nevernote]]></title>
-      <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/</url>
-      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#91;&#110;&#x65;&#118;&#x65;&#x72;&#x6e;&#111;&#116;&#101;&#x61;&#100;&#x6d;&#105;&#110;&#x40;&#110;&#x65;&#x76;&#101;&#114;&#x6e;&#111;&#x74;&#101;&#46;&#99;&#x6f;&#109;&#x5d;&#91;&#50;&#93;">&#91;&#110;&#x65;&#118;&#x65;&#x72;&#x6e;&#111;&#116;&#101;&#x61;&#100;&#x6d;&#105;&#110;&#x40;&#110;&#x65;&#x76;&#101;&#114;&#x6e;&#111;&#x74;&#101;&#46;&#99;&#x6f;&#109;&#x5d;&#91;&#50;&#93;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> CTF </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ctf </tag>
-            
-            <tag> web </tag>
-            
-            <tag> csaw ctf qualification round 2013 </tag>
-            
-            <tag> referer </tag>
-            
-            <tag> nevernote </tag>
             
         </tags>
         
@@ -2396,9 +2396,9 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> miscellaneous </tag>
             
-            <tag> 流量分析 </tag>
-            
             <tag> traffic analysis </tag>
+            
+            <tag> 流量分析 </tag>
             
         </tags>
         
@@ -2426,9 +2426,9 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> miscellaneous </tag>
             
-            <tag> 流量分析 </tag>
-            
             <tag> traffic analysis </tag>
+            
+            <tag> 流量分析 </tag>
             
         </tags>
         
@@ -3169,6 +3169,12 @@ Post浏览/自定义Cookies,/执行自定义脚本/自动刷新页面/同IP网�
       <title><![CDATA[link]]></title>
       <url>/link/index.html</url>
       <content type="html"><![CDATA[<p>目前暂时只添加纯粹分享安全技术，能长期稳定访问的博客或社区，申请友链可以先加好我的博客链接，然后在评论里面回复你的网站名称和网站地址，或者给我发<a href="mailto:admin@hackfun.org" target="_blank" rel="external">邮件</a>也行，我会及时添加:P</p><p><strong>比如：</strong></p><blockquote><p>网站名称：HackFun<br>网站地址：<a href="https://www.hackfun.org" target="_blank" rel="external">https://www.hackfun.org</a></p></blockquote><hr><h1 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h1><ul><li><a href="https://phpinfo.me" target="_blank" rel="external">Lcy</a></li><li><a href="https://www.hackfun.org/kali-tools/kali-tools-zh.html" target="_blank" rel="external">Kali</a></li><li><a href="https://www.lmva.cc" target="_blank" rel="external">LMva</a></li><li><a href="http://www.mxny.org/" target="_blank" rel="external">mxny</a></li><li><a href="http://blog.kidoplay.com/" target="_blank" rel="external">Kido</a></li><li><a href="http://www.ycjcl.cc/" target="_blank" rel="external">King</a></li><li><a href="http://blog.l1n3.net/" target="_blank" rel="external">LinE</a></li><li><a href="http://www.cizel.cn" target="_blank" rel="external">Cizel</a></li><li><a href="http://www.cnblogs.com/iamstudy/" target="_blank" rel="external">L3m0n</a></li><li><a href="https://www.deamwork.com" target="_blank" rel="external">Jas0n</a></li><li><a href="http://xdxd.love" target="_blank" rel="external">xd_xd</a></li><li><a href="http://www.tasfa.cn/" target="_blank" rel="external">Tasfa</a></li><li><a href="http://bestwing.me/" target="_blank" rel="external">Swing</a></li><li><a href="http://www.bodkin.ren/" target="_blank" rel="external">L4oZu1</a></li><li><a href="http://metasploit.lofter.com/" target="_blank" rel="external">LOnils</a></li><li><a href="http://www.yqxiaojunjie.com/" target="_blank" rel="external">junjie</a></li><li><a href="http://www.xianyusec.com/" target="_blank" rel="external">xianyu</a></li><li><a href="http://www.cnblogs.com/Ox9A82" target="_blank" rel="external">Ox9A82</a></li><li><a href="http://o0xmuhe.me" target="_blank" rel="external">0xmuhe</a></li><li><a href="https://www.virzz.com" target="_blank" rel="external">Virink</a></li><li><a href="http://bl4ck.in/" target="_blank" rel="external">Tomato</a></li><li><a href="http://www.cnblogs.com/0xmuhe/" target="_blank" rel="external">0xmuhe</a></li><li><a href="http://www.isecer.com/" target="_blank" rel="external">Virink</a></li><li><a href="http://www.0aa.me/" target="_blank" rel="external">Mosuan</a></li><li><a href="http://www.venenof.com/" target="_blank" rel="external">Veneno</a></li><li><a href="https://wujunze.com" target="_blank" rel="external">wujunze</a></li><li><a href="http://www.cnblogs.com/xuanhun" target="_blank" rel="external">xuanhun</a></li><li><a href="http://www.moonsec.com" target="_blank" rel="external">moonsec</a></li><li><a href="http://www.hackersb.cn" target="_blank" rel="external">Striker</a></li><li><a href="https://www.ohlinge.cn/" target="_blank" rel="external">0hlin9e</a></li><li><a href="http://appleu0.sinaapp.com" target="_blank" rel="external">AppLeU0</a></li><li><a href="http://hijacks.in/" target="_blank" rel="external">LateRain</a></li><li><a href="http://balis0ng.com/" target="_blank" rel="external">balis0ng</a></li><li><a href="http://www.netfairy.net" target="_blank" rel="external">Netfairy</a></li><li><a href="http://www.bystudent.com" target="_blank" rel="external">ByStudent</a></li><li><a href="http://lonelyrain.me" target="_blank" rel="external">LonelyRain</a></li><li><a href="http://www.bugs.cc" target="_blank" rel="external">Black-Hole</a></li><li><a href="http://blog.csdn.net/niexinming" target="_blank" rel="external">niexinming</a></li></ul><h1 id="社区媒体"><a href="#社区媒体" class="headerlink" title="社区媒体"></a>社区媒体</h1><ul><li><a href="https://www.sec-wiki.com" target="_blank" rel="external">SecWiki</a></li><li><a href="http://www.ixsec.org/" target="_blank" rel="external">爱安全</a></li><li><a href="http://www.anquanquan.info" target="_blank" rel="external">安全圈</a></li><li><a href="http://www.secbox.cn/" target="_blank" rel="external">安全盒子</a></li><li><a href="http://www.secpulse.com" target="_blank" rel="external">安全脉搏</a></li><li><a href="http://www.secist.com/" target="_blank" rel="external">即刻安全</a></li><li><a href="http://www.52bug.cn" target="_blank" rel="external">吾爱漏洞</a></li><li><a href="http://www.hi-ourlife.com/" target="_blank" rel="external">米斯特安全</a></li><li><a href="http://www.milw0rm.cn" target="_blank" rel="external">网络攻防小组</a></li><li><a href="http://www.scap.org.cn" target="_blank" rel="external">SCAP中文社区</a></li></ul>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[search]]></title>
+      <url>/search/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
