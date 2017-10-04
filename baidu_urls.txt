@@ -1,3 +1,4 @@
+https://sunnyelf.github.io/2017/10/04/给hexo添加本地搜索站内功能/
 https://sunnyelf.github.io/2017/10/03/超赞的恶意软件分析/
 https://sunnyelf.github.io/2017/10/03/应急响应笔记/
 https://sunnyelf.github.io/2017/09/29/PHP-CTF-tricks-parse-str-and-loose-comparison/

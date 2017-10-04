@@ -89,31 +89,23 @@ var searchFunc = function(path, search_id, content_id) {
         })
     }
 
-var inputArea = document.querySelector("#local-search-input");
-var getSearchFile = function() {
-        var path = "/search.xml";
-        searchFunc(path, 'local-search-input', 'local-search-result');
-    }
+var inputArea = document.querySelector("#search-input");
+var $resultArea = $("#search-result");
 
 inputArea.onfocus = function() {
-    getSearchFile()
+    var path = "/search.xml";
+    searchFunc(path, 'search-input', 'search-result');
 }
 
-var $resetButton = $("#search-form .fa-times");
-var $resultArea = $("#local-search-result");
-
-inputArea.oninput = function() {
-    $resetButton.show();
+inputArea.onkeydown = function(){
+    if(event.keyCode==13){
+        return false
+    }
 }
+
 resetSearch = function() {
     $resultArea.html("");
-    document.querySelector("#search-form").reset();
-    $resetButton.hide();
     $(".no-result").hide();
-}
-
-inputArea.onkeydown = function() {
-    if (event.keyCode == 13) return false
 }
 
 $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
