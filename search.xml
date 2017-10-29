@@ -1896,9 +1896,9 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> ctf </tag>
             
-            <tag> 密码学 </tag>
-            
             <tag> python </tag>
+            
+            <tag> 密码学 </tag>
             
             <tag> cryptographic </tag>
             
@@ -2208,7 +2208,7 @@ if __name__ == &apos;__main__&apos;:
     <entry>
       <title><![CDATA[CSAW CTF Qualification Round 2013 Web 200 Nevernote]]></title>
       <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/</url>
-      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x5b;&#x6e;&#101;&#118;&#x65;&#x72;&#110;&#x6f;&#116;&#101;&#97;&#100;&#x6d;&#x69;&#110;&#x40;&#110;&#x65;&#x76;&#x65;&#x72;&#110;&#111;&#116;&#101;&#46;&#x63;&#x6f;&#x6d;&#93;&#91;&#x32;&#93;">&#x5b;&#x6e;&#101;&#118;&#x65;&#x72;&#110;&#x6f;&#116;&#101;&#97;&#100;&#x6d;&#x69;&#110;&#x40;&#110;&#x65;&#x76;&#x65;&#x72;&#110;&#111;&#116;&#101;&#46;&#x63;&#x6f;&#x6d;&#93;&#91;&#x32;&#93;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
+      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x5b;&#x6e;&#101;&#x76;&#x65;&#114;&#110;&#x6f;&#116;&#101;&#97;&#100;&#109;&#105;&#110;&#x40;&#110;&#101;&#118;&#101;&#x72;&#x6e;&#x6f;&#116;&#101;&#46;&#x63;&#111;&#109;&#93;&#91;&#50;&#93;">&#x5b;&#x6e;&#101;&#x76;&#x65;&#114;&#110;&#x6f;&#116;&#101;&#97;&#100;&#109;&#105;&#110;&#x40;&#110;&#101;&#118;&#101;&#x72;&#x6e;&#x6f;&#116;&#101;&#46;&#x63;&#111;&#109;&#93;&#91;&#50;&#93;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
 </code></pre>]]></content>
       
         <categories>
@@ -2312,9 +2312,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> misc </tag>
+            
+            <tag> ctf </tag>
             
             <tag> python </tag>
             
@@ -2346,9 +2346,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> misc </tag>
+            
+            <tag> ctf </tag>
             
             <tag> forensics </tag>
             
@@ -2410,9 +2410,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> misc </tag>
+            
+            <tag> ctf </tag>
             
             <tag> csaw ctf qualification round 2013 </tag>
             
@@ -2440,9 +2440,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> misc </tag>
+            
+            <tag> ctf </tag>
             
             <tag> csaw ctf qualification round 2013 </tag>
             
@@ -2470,9 +2470,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> web </tag>
             
@@ -2496,9 +2496,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> web </tag>
             
@@ -2526,9 +2526,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> web </tag>
             
@@ -2556,6 +2556,8 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> backdoor ctf 2013 </tag>
+            
             <tag> ctf </tag>
             
             <tag> 穷举法 </tag>
@@ -2563,8 +2565,6 @@ if __name__ == &apos;__main__&apos;:
             <tag> crypto </tag>
             
             <tag> 密文破译 </tag>
-            
-            <tag> backdoor ctf 2013 </tag>
             
             <tag> 密码学 </tag>
             
@@ -2586,9 +2586,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> sqlite injection </tag>
             
@@ -2612,13 +2612,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> misc </tag>
             
             <tag> quickly find prime </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> python </tag>
             
@@ -2666,9 +2666,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
-            
             <tag> backdoor ctf 2013 </tag>
+            
+            <tag> ctf </tag>
             
             <tag> web </tag>
             
@@ -2690,11 +2690,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> misc </tag>
             
             <tag> backdoor ctf 2013 </tag>
             
-            <tag> misc </tag>
+            <tag> ctf </tag>
             
             <tag> forensics </tag>
             
@@ -2718,11 +2718,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> misc </tag>
             
             <tag> backdoor ctf 2013 </tag>
             
-            <tag> misc </tag>
+            <tag> ctf </tag>
             
             <tag> forensics </tag>
             
@@ -2746,11 +2746,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> misc </tag>
             
             <tag> backdoor ctf 2013 </tag>
             
-            <tag> misc </tag>
+            <tag> ctf </tag>
             
             <tag> forensics </tag>
             

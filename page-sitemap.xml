@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://sunnyelf.github.io/link/</loc>
+        <lastmod>2017-10-29T17:55:53.963Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://sunnyelf.github.io/search/</loc>
         <lastmod>2017-10-04T18:07:44.095Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,13 +23,6 @@
     <url>
         <loc>https://sunnyelf.github.io/about/</loc>
         <lastmod>2017-10-01T10:16:43.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://sunnyelf.github.io/link/</loc>
-        <lastmod>2017-10-01T07:27:05.133Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
