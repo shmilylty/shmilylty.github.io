@@ -239,6 +239,78 @@
     </url>
 
     <url>
+        <loc>https://hackfun.org/2017/09/07/Kali-Linux%E5%8F%96%E8%AF%81%E5%88%86%E6%9E%90%E4%B9%8BBinwalk/</loc>
+        <lastmod>2017-10-02T19:22:31.968Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/09/07/Kali-Linux%E5%8F%96%E8%AF%81%E5%88%86%E6%9E%90%E4%B9%8Bbulk-extractor/</loc>
+        <lastmod>2017-10-02T19:22:31.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/24/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bnbtscan-unixwiz/</loc>
+        <lastmod>2017-10-02T19:22:31.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/24/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BMetagoofil/</loc>
+        <lastmod>2017-10-02T19:22:31.951Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bintrace/</loc>
+        <lastmod>2017-10-02T19:22:31.946Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BiSMTP/</loc>
+        <lastmod>2017-10-02T19:22:31.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bident-user-enum/</loc>
+        <lastmod>2017-10-02T19:22:31.938Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bhping3/</loc>
+        <lastmod>2017-10-02T19:22:31.935Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bgoofile/</loc>
+        <lastmod>2017-10-02T19:22:31.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hackfun.org/2017/04/09/EasyCTF-2017-Reverse-Pwn-Write-Up/</loc>
         <lastmod>2017-10-02T19:22:31.926Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -263,6 +335,22 @@
     </url>
 
     <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BMaltego/</loc>
+        <lastmod>2017-10-02T19:22:31.910Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Blbd/</loc>
+        <lastmod>2017-10-02T19:22:31.906Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hackfun.org/2017/03/26/python%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E7%B4%A0%E6%95%B0%E7%9A%84%E4%BC%98%E5%8C%96/</loc>
         <lastmod>2017-10-02T19:22:31.903Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -281,6 +369,14 @@
     <url>
         <loc>https://hackfun.org/2017/04/09/EasyCTF-2017-Forensics-Write-Up/</loc>
         <lastmod>2017-10-02T19:22:31.892Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bmasscan/</loc>
+        <lastmod>2017-10-02T19:22:31.877Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -375,8 +471,48 @@
     </url>
 
     <url>
+        <loc>https://hackfun.org/2016/10/24/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BFirewalk/</loc>
+        <lastmod>2017-10-02T19:22:31.819Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hackfun.org/2016/11/06/%E6%9C%80%E4%BC%98%E7%A7%80%E7%9A%84Kali-Linux%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AF%BE%E7%A8%8B/</loc>
         <lastmod>2017-10-02T19:22:31.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/24/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BFierce/</loc>
+        <lastmod>2017-10-02T19:22:31.814Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/25/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB%E4%B9%8BGhost-Phisher/</loc>
+        <lastmod>2017-10-02T19:22:31.809Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/25/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bfragrouter/</loc>
+        <lastmod>2017-10-02T19:22:31.806Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/24/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bfragroute/</loc>
+        <lastmod>2017-10-02T19:22:31.805Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -391,8 +527,184 @@
     </url>
 
     <url>
+        <loc>https://hackfun.org/2016/10/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BenumIAX/</loc>
+        <lastmod>2017-10-02T19:22:31.797Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Benum4linux/</loc>
+        <lastmod>2017-10-02T19:22:31.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/22/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BDotDotPwn/</loc>
+        <lastmod>2017-10-02T19:22:31.788Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/21/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bdnswalk/</loc>
+        <lastmod>2017-10-02T19:22:31.784Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/21/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bdnstracer/</loc>
+        <lastmod>2017-10-02T19:22:31.780Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/21/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BDNSRecon/</loc>
+        <lastmod>2017-10-02T19:22:31.774Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/20/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bdnsmap/</loc>
+        <lastmod>2017-10-02T19:22:31.770Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/20/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bdnsenum/</loc>
+        <lastmod>2017-10-02T19:22:31.766Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/20/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bdnmap/</loc>
+        <lastmod>2017-10-02T19:22:31.763Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/20/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BDMitry/</loc>
+        <lastmod>2017-10-02T19:22:31.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BCookie-Cadger/</loc>
+        <lastmod>2017-10-02T19:22:31.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E8%84%86%E5%BC%B1%E6%80%A7%E5%88%86%E6%9E%90%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E4%B9%8Bcisco-torch/</loc>
+        <lastmod>2017-10-02T19:22:31.751Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E8%84%86%E5%BC%B1%E6%80%A7%E5%88%86%E6%9E%90%E4%B9%8Bcopy-router-config/</loc>
+        <lastmod>2017-10-02T19:22:31.747Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BCDPSnarf/</loc>
+        <lastmod>2017-10-02T19:22:31.746Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bbing-ip2hosts/</loc>
+        <lastmod>2017-10-02T19:22:31.742Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BAutomater/</loc>
+        <lastmod>2017-10-02T19:22:31.738Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BCaseFile/</loc>
+        <lastmod>2017-10-02T19:22:31.734Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/18/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8BAmap/</loc>
+        <lastmod>2017-10-02T19:22:31.730Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/18/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bace-voip/</loc>
+        <lastmod>2017-10-02T19:22:31.723Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/19/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bbraa/</loc>
+        <lastmod>2017-10-02T19:22:31.720Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hackfun.org/2017/01/26/pyonlinedict-Linux%E7%BB%88%E7%AB%AF%E5%9C%A8%E7%BA%BF%E5%AD%97%E5%85%B8/</loc>
         <lastmod>2017-10-02T19:22:31.719Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2017/04/23/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B9%8Bgolismero/</loc>
+        <lastmod>2017-10-02T19:22:31.715Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/2016/10/18/Kali-Linux%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%86%E7%A0%81%E6%94%BB%E5%87%BB%E4%B9%8Bacccheck/</loc>
+        <lastmod>2017-10-02T19:22:31.626Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
