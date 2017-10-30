@@ -31,8 +31,8 @@ https://hackfun.org/2016/11/16/实用工具：Layer-子域名挖掘机4.1-全新
 https://hackfun.org/2016/11/10/作为一个penetration-tester必知必读的好书推荐/
 https://hackfun.org/2016/11/06/最优秀的Kali-Linux渗透测试课程/
 https://hackfun.org/2016/11/03/Linux平台C语言Socket编程练习之TCP套接字/
-https://hackfun.org/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-100-Guess-Harder/
 https://hackfun.org/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/
+https://hackfun.org/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-100-Guess-Harder/
 https://hackfun.org/2016/08/18/CSAW-CTF-Qualification-Round-2013--Trivia-50/
 https://hackfun.org/2016/08/18/CSAW-CTF-Qualification-Round-2013--Misc-300-Life/
 https://hackfun.org/2016/08/17/CSAW-CTF-Qualification-Round-2013--Misc-200-deadbeef/
