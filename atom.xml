@@ -271,9 +271,9 @@ Binwalk还包括一个自定义魔数签名文件，其中包含常见的诸如�
     
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
-      <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-    
       <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
+    
+      <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
     
@@ -488,9 +488,9 @@ detector,负载平衡检测器)检测给定的域是否使用DNS/HTTP负载平�
     
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
-      <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-    
       <category term="sniffing" scheme="https://hackfun.org/tags/sniffing/"/>
+    
+      <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
     
@@ -558,6 +558,8 @@ ident-user-enum是一个简单的PERL脚本，用于查询识别服务（113/TCP
     
       <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
+      <category term="infogathering" scheme="https://hackfun.org/tags/infogathering/"/>
+    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
@@ -565,8 +567,6 @@ ident-user-enum是一个简单的PERL脚本，用于查询识别服务（113/TCP
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
     
       <category term="portscanning" scheme="https://hackfun.org/tags/portscanning/"/>
-    
-      <category term="infogathering" scheme="https://hackfun.org/tags/infogathering/"/>
     
       <category term="ident-user-enum" scheme="https://hackfun.org/tags/ident-user-enum/"/>
     

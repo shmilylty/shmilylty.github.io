@@ -1136,14 +1136,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/portscanning/</loc>
+        <loc>https://hackfun.org/tags/infogathering/</loc>
         <lastmod>2017-10-02T19:22:31.938Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/infogathering/</loc>
+        <loc>https://hackfun.org/tags/portscanning/</loc>
         <lastmod>2017-10-02T19:22:31.938Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1220,14 +1220,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
+        <loc>https://hackfun.org/tags/enumeration/</loc>
         <lastmod>2017-10-02T19:22:31.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/enumeration/</loc>
+        <loc>https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
         <lastmod>2017-10-02T19:22:31.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
