@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://sunnyelf.github.io</loc>
+        <loc>https://hackfun.org</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://sunnyelf.github.io/link/</loc>
+        <loc>https://hackfun.org/link/</loc>
         <lastmod>2017-10-29T17:55:53.963Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://sunnyelf.github.io/search/</loc>
+        <loc>https://hackfun.org/search/</loc>
         <lastmod>2017-10-04T18:07:44.095Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://sunnyelf.github.io/about/</loc>
+        <loc>https://hackfun.org/about/</loc>
         <lastmod>2017-10-01T10:16:43.310Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
