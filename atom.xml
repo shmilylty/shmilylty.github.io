@@ -267,15 +267,15 @@ Binwalk还包括一个自定义魔数签名文件，其中包含常见的诸如�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
-    
-      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
+    
+      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
     
       <category term="nbtscan-unixwiz" scheme="https://hackfun.org/tags/nbtscan-unixwiz/"/>
     
@@ -309,15 +309,15 @@ Harvester的团队编写而成，可用来提取元数据（metadata）。元数
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
-    
-      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
     
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
+    
       <category term="reporting" scheme="https://hackfun.org/tags/reporting/"/>
+    
+      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
     
       <category term="metagoofil" scheme="https://hackfun.org/tags/metagoofil/"/>
     
@@ -376,13 +376,13 @@ ZMap，采用了异步传输的方式。它和这些扫描器最主要的区别�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="portscanning" scheme="https://hackfun.org/tags/portscanning/"/>
     
@@ -412,11 +412,11 @@ Maltego向网络和资源为基础的实体提供的独特视角是在互联网�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="portscanning" scheme="https://hackfun.org/tags/portscanning/"/>
     
@@ -453,11 +453,11 @@ detector,负载平衡检测器)检测给定的域是否使用DNS/HTTP负载平�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="webapps" scheme="https://hackfun.org/tags/webapps/"/>
     
@@ -484,15 +484,15 @@ detector,负载平衡检测器)检测给定的域是否使用DNS/HTTP负载平�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
-    
-      <category term="sniffing" scheme="https://hackfun.org/tags/sniffing/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
+    
+      <category term="sniffing" scheme="https://hackfun.org/tags/sniffing/"/>
     
       <category term="spoofing" scheme="https://hackfun.org/tags/spoofing/"/>
     
@@ -521,13 +521,13 @@ InTrace是一款类似于Traceroute的被动路由跟踪工具。但它不同的
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="evasion" scheme="https://hackfun.org/tags/evasion/"/>
     
@@ -556,17 +556,17 @@ ident-user-enum是一个简单的PERL脚本，用于查询识别服务（113/TCP
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
-      <category term="infogathering" scheme="https://hackfun.org/tags/infogathering/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
-    
-      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
     
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
+    
+      <category term="enumeration" scheme="https://hackfun.org/tags/enumeration/"/>
+    
       <category term="portscanning" scheme="https://hackfun.org/tags/portscanning/"/>
+    
+      <category term="infogathering" scheme="https://hackfun.org/tags/infogathering/"/>
     
       <category term="ident-user-enum" scheme="https://hackfun.org/tags/ident-user-enum/"/>
     
@@ -592,11 +592,11 @@ Sanfilippo，界面灵感来自ping（8）unix命令，目前最新版是hping3�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="recon" scheme="https://hackfun.org/tags/recon/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="spoofing" scheme="https://hackfun.org/tags/spoofing/"/>
     
@@ -624,11 +624,11 @@ Sanfilippo，界面灵感来自ping（8）unix命令，目前最新版是hping3�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="goofile" scheme="https://hackfun.org/tags/goofile/"/>
     
@@ -653,11 +653,11 @@ GoLismero是安全性测试的开源框架。它是目前面向网络的安全�
       <category term="神兵利器" scheme="https://hackfun.org/categories/%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
     
     
-      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
-    
       <category term="information gathering" scheme="https://hackfun.org/tags/information-gathering/"/>
     
       <category term="信息收集" scheme="https://hackfun.org/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+      <category term="kali linux" scheme="https://hackfun.org/tags/kali-linux/"/>
     
       <category term="golismero" scheme="https://hackfun.org/tags/golismero/"/>
     
