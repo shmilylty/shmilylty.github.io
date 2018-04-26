@@ -1325,13 +1325,6 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/cheetah/</loc>
-        <lastmod>2017-10-02T19:31:43.911Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hackfun.org/tags/%E7%A9%B7%E4%B8%BE%E6%B3%95/</loc>
         <lastmod>2017-10-02T19:46:00.691Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1479,14 +1472,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/crc-error-in-chunk-ihdr/</loc>
+        <loc>https://hackfun.org/tags/steganography/</loc>
         <lastmod>2017-10-02T19:50:53.240Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/steganography/</loc>
+        <loc>https://hackfun.org/tags/crc-error-in-chunk-ihdr/</loc>
         <lastmod>2017-10-02T19:50:53.240Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1563,14 +1556,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/writeup/</loc>
+        <loc>https://hackfun.org/tags/cookie/</loc>
         <lastmod>2017-10-02T19:51:17.477Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/cookie/</loc>
+        <loc>https://hackfun.org/tags/writeup/</loc>
         <lastmod>2017-10-02T19:51:17.477Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1810,6 +1803,27 @@
     <url>
         <loc>https://hackfun.org/tags/search/</loc>
         <lastmod>2017-10-04T20:36:40.118Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/tags/cheetah/</loc>
+        <lastmod>2018-04-26T07:41:35.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/tags/cheetah-gui/</loc>
+        <lastmod>2018-04-26T07:41:35.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hackfun.org/tags/webshell-password-cracker/</loc>
+        <lastmod>2018-04-26T07:41:35.031Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
