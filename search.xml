@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title></title>
+      <url>/2018/04/26/Cheetah-GUI/</url>
+      <content type="html"><![CDATA[<p>title: Cheetah-GUI<br>categories: 神兵利器<br>tags: [cheetah,cheetah-gui,webshell-password-cracker]<br>date: 2018-04-26 15:10:00</p><p><img src="https://github.com/sunnyelf/cheetah/blob/master/images/logo.jpg" alt="cheetah logo"></p><p><a href="https://github.com/sunnyelf/cheetah-gui/blob/master/README.md" target="_blank" rel="external">English description</a> | <a href="https://github.com/sunnyelf/cheetah-gui/blob/master/README_zh.md" target="_blank" rel="external">中文说明</a></p><p><a href="https://opensource.org/licenses/GPL-3.0/" target="_blank" rel="external"><img src="https://badges.frapsoft.com/os/gpl/gpl.png?v=103" alt="GPL Licence"></a><br><a href="https://travis-ci.org/sunnyelf/cheetah" target="_blank" rel="external"><img src="https://travis-ci.org/sunnyelf/cheetah.svg?branch=master" alt="Build Status"></a><br><a href="https://codeclimate.com/github/sunnyelf/cheetah" target="_blank" rel="external"><img src="https://codeclimate.com/github/sunnyelf/cheetah/badges/gpa.svg" alt="Code Climate"></a><br><a href="https://gitter.im/cheetah-community/" target="_blank" rel="external"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a><br><a href="https://saythanks.io/to/sunnyelf" target="_blank" rel="external"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"></a><br><a href="https://twitter.com/jinglingbiaodi" target="_blank" rel="external"><img src="https://img.shields.io/badge/follow-twitter-blue.svg" alt="Twitter"></a></p><h1 id="0x00-介绍"><a href="#0x00-介绍" class="headerlink" title="0x00 介绍"></a>0x00 介绍</h1><p>Cheetah是一款基于字典的webshell密码爆破工具，Cheetah的工作原理是能根据自动探测出的web服务设置相关参数一次性提交大量的探测密码进行爆破，爆破效率是其他普通webshell密码暴力破解工具上千倍。</p><p>此版本是Cheetah的图形用户版本，项目地址：<a href="https://github.com/sunnyelf/cheetah-gui" target="_blank" rel="external">https://github.com/sunnyelf/cheetah-gui</a>。</p><h1 id="0x01-特点"><a href="#0x01-特点" class="headerlink" title="0x01 特点"></a>0x01 特点</h1><ul><li>速度极快</li><li>支持代理</li><li>支持批量爆破</li><li>自动伪造请求</li><li>自动探测web服务设置相关参数</li><li>支持读取和去重超大密码字典文件</li><li>支持python 2.x和3.x</li><li>目前支持php、jsp、asp、aspx webshell</li></ul><h1 id="0x02-下载使用"><a href="#0x02-下载使用" class="headerlink" title="0x02 下载使用"></a>0x02 下载使用</h1><pre><code>git clone https://github.com/sunnyelf/cheetah-gui.git
+cd cheetah
+python cheetah.py
+</code></pre><h1 id="0x03-问题"><a href="#0x03-问题" class="headerlink" title="0x03 问题"></a>0x03 问题</h1><p>如果在使用过程中出现了bug欢迎提交<a href="https://github.com/sunnyelf/cheetah-gui/issues" target="_blank" rel="external">issues</a>，我会及时回复并修复。</p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[给hexo添加本地搜索站内功能]]></title>
       <url>/2017/10/04/%E7%BB%99hexo%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E7%AB%99%E5%86%85%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前博客用的typecho的deep主题，还是挺喜欢的，只是感觉写文章就是稍微有点麻烦，每次都需要登录网站后台编写或发布，而且很多东西我都喜欢开源，分享知识也是，于是最近就尝试用hexo + github pages，用了这套组合才知道这简直太符合我这种懒癌，博客搭建配置好后，本地编写markdown文章之后直接<code>hexo g</code> 然后<code>hexo d</code> 就发布了，寻找很久的主题，后来看到P牛博客前端用的hexo的<a href="https://github.com/sunnyelf/cactus-dark" target="_blank" rel="external">cactus-dark</a>主题，顿时就喜欢上了，博客配置成功之后又装了一些必要的插件，然后对博客布局和样式代码进行一些修改，由于cactus-dark主题没有搜索功能，于是便尝试给添加搜索功能。</p><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>至于hexo怎么搭建hexo + github pages博客网上一堆就不讲了，由于搜索功能是调用hexo-generator-search生成xml数据，所以需要安装hexo-generator-search插件：<br></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-generator-search</div></pre></td></tr></table></figure><p></p><p>然后为hexo博客的配置文件_config.yml添加插件配置（注意：不是主题的配置文件）：<br></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">search:</span></div><div class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></div><div class="line"><span class="attr">  field:</span> <span class="string">post</span></div></pre></td></tr></table></figure><p></p><p>添加到search页面的导航：<br></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">nav:</span></div><div class="line"><span class="attr">  Home:</span> <span class="string">/</span></div><div class="line"><span class="attr">  About:</span> <span class="string">/about/</span></div><div class="line"><span class="attr">  Link:</span> <span class="string">/link/</span></div><div class="line"><span class="attr">  Archives:</span> <span class="string">/archives/</span></div><div class="line"><span class="attr">  Projects:</span> <span class="attr">https://github.com/sunnyelf</span></div><div class="line"><span class="attr">  Search:</span> <span class="string">/search/</span></div></pre></td></tr></table></figure><p></p><p>然后在<code>themes\cactus-dark\layout</code>文件夹下新建search.ejs文件，编写搜索框模板：<br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"search"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"h1"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-8 col-md-4"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"search-input"</span> <span class="attr">id</span>=<span class="string">"search-input"</span> <span class="attr">placeholder</span>=<span class="string">"search..."</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-4 col-md-2"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">class</span>=<span class="string">"reset-button"</span> <span class="attr">onclick</span>=<span class="string">"resetSearch()"</span>&gt;</span>reset<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"search-result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">'no-result'</span>&gt;</span>No results found<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure><p></p><p>由于上面用到了flexboxgrid的CSS框架，所以需要在<code>C:\Users\Jing Ling\Documents\blog\themes\cactus-dark\layout\_partial\styles.ejs</code>文件引入：<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;% if (page.layout === &apos;search&apos;) &#123; %&gt;</div><div class="line">&lt;link href=&quot;https://cdn.bootcss.com/flexboxgrid/6.3.1/flexboxgrid.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure><p></p><p>，之后<code>\themes\cactus-dark\source\css\_partial</code>新建search.styl文件，编写搜索框样式：<br></p><figure class="highlight styl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">.search-input</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0.875rem</span></div><div class="line">  <span class="attribute">height</span>: <span class="number">1.75rem</span></div><div class="line">  <span class="attribute">border-width</span>: <span class="number">1px</span></div><div class="line">  <span class="attribute">display</span>: block</div><div class="line">  <span class="attribute">font-family</span>: inherit</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0.5rem</span></div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span></div><div class="line"></div><div class="line">.reset-button</div><div class="line">  <span class="attribute">height</span>: <span class="number">1.75rem</span></div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span></div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#2bbc8a</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">16px</span></div><div class="line">  font-size:.8em</div><div class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#2bbc8a</span>;</div><div class="line">  <span class="attribute">border-radius</span>:<span class="number">2px</span>;</div><div class="line">  <span class="attribute">font-family</span>: inherit</div><div class="line">  <span class="attribute">font-weight</span>: bold</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-tag">ul</span><span class="selector-class">.search-result-list</span> &#123;</div><div class="line">  <span class="attribute">list-style-type</span>:none;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">2em</span> auto;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">2px</span> solid <span class="number">#2bbc8a</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-class">.search-result-list</span> <span class="selector-tag">li</span>:hover &#123;</div><div class="line">  <span class="attribute">color</span>:<span class="number">#eee</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-tag">a</span><span class="selector-class">.search-result-title</span> &#123;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">1.2</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#2bb48a</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-tag">p</span><span class="selector-class">.search-result</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0.4em</span> auto;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">13em</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0.8em</span>;</div><div class="line">  <span class="attribute">text-align</span>: justify;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#search-result</span> <span class="selector-tag">em</span><span class="selector-class">.search-keyword</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f58e90</span>;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#f58e90</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0.85em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span><span class="selector-class">.no-result</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">  <span class="attribute">padding-bottom</span>: <span class="number">0.5em</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">2px</span> solid <span class="number">#2bbc8a</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><p>为了调用编写的样式需要在<code>\themes\cactus-dark\source\css\style.styl</code>样式文件添加<code>@import &quot;_partial/search&quot;</code>引入。<br>之后便是编写search.js处理hexo-generator-search生成索引数据search.xml：<br></p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// // A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)</span></div><div class="line"><span class="comment">// MIT License</span></div><div class="line"><span class="comment">// Copyright (C) 2015</span></div><div class="line"><span class="comment">// Joseph Pan &lt;https://github.com/wzpan&gt;</span></div><div class="line"><span class="comment">// Shuhao Mao &lt;https://github.com/maoshuhao&gt;</span></div><div class="line"><span class="comment">// MOxFIVE &lt;https://github.com/MOxFIVE&gt;</span></div><div class="line"><span class="comment">// Jing Ling &lt;https://github.com/sunnyelf&gt;</span></div><div class="line"><span class="keyword">var</span> searchFunc = <span class="function"><span class="keyword">function</span> (<span class="params">path, search_id, content_id</span>) </span>&#123;</div><div class="line"><span class="meta">    'use strict'</span>;</div><div class="line">    $.ajax(&#123;</div><div class="line">        url: path,</div><div class="line">        dataType: <span class="string">"xml"</span>,</div><div class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">xmlResponse</span>) </span>&#123;</div><div class="line">            <span class="comment">// get the contents from search data</span></div><div class="line">            <span class="keyword">var</span> datas = $(<span class="string">"entry"</span>, xmlResponse).map(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">return</span> &#123;</div><div class="line">                    title: $(<span class="string">"title"</span>, <span class="keyword">this</span>).text(),</div><div class="line">                    content: $(<span class="string">"content"</span>, <span class="keyword">this</span>).text(),</div><div class="line">                    url: $(<span class="string">"url"</span>, <span class="keyword">this</span>).text()</div><div class="line">                &#125;;</div><div class="line">            &#125;).get();</div><div class="line">            <span class="keyword">var</span> $input = <span class="built_in">document</span>.getElementById(search_id);</div><div class="line">            <span class="keyword">var</span> $resultContent = <span class="built_in">document</span>.getElementById(content_id);</div><div class="line">            $input.addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> str = <span class="string">'&lt;ul class=\"search-result-list\"&gt;'</span>;</div><div class="line">                <span class="keyword">var</span> keywords = <span class="keyword">this</span>.value.trim().toLowerCase().split(<span class="regexp">/[\s\-]+/</span>);</div><div class="line">                $resultContent.innerHTML = <span class="string">""</span>;</div><div class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.value.trim().length &lt;= <span class="number">0</span>) &#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// perform local searching</span></div><div class="line">                datas.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">                    <span class="keyword">var</span> isMatch = <span class="literal">true</span>;</div><div class="line">                    <span class="keyword">var</span> content_index = [];</div><div class="line">                    <span class="keyword">var</span> data_title = data.title.trim().toLowerCase();</div><div class="line">                    <span class="keyword">var</span> data_content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>, <span class="string">""</span>).toLowerCase();</div><div class="line">                    <span class="keyword">var</span> data_url = data.url;</div><div class="line">                    <span class="keyword">var</span> index_title = <span class="number">-1</span>;</div><div class="line">                    <span class="keyword">var</span> index_content = <span class="number">-1</span>;</div><div class="line">                    <span class="keyword">var</span> first_occur = <span class="number">-1</span>;</div><div class="line">                    <span class="comment">// only match artiles with not empty titles and contents</span></div><div class="line">                    <span class="keyword">if</span> (data_title != <span class="string">''</span> &amp;&amp; data_content != <span class="string">''</span>) &#123;</div><div class="line">                        keywords.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">keyword, i</span>) </span>&#123;</div><div class="line">                            index_title = data_title.indexOf(keyword);</div><div class="line">                            index_content = data_content.indexOf(keyword);</div><div class="line">                            <span class="keyword">if</span> (index_title &lt; <span class="number">0</span> &amp;&amp; index_content &lt; <span class="number">0</span>) &#123;</div><div class="line">                                isMatch = <span class="literal">false</span>;</div><div class="line">                            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                                <span class="keyword">if</span> (index_content &lt; <span class="number">0</span>) &#123;</div><div class="line">                                    index_content = <span class="number">0</span>;</div><div class="line">                                &#125;</div><div class="line">                                <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                                    first_occur = index_content;</div><div class="line">                                &#125;</div><div class="line">                            &#125;</div><div class="line">                        &#125;);</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">// show search results</span></div><div class="line">                    <span class="keyword">if</span> (isMatch) &#123;</div><div class="line">                        str += <span class="string">"&lt;li&gt;&lt;a href='"</span> + data_url + <span class="string">"' class='search-result-title' target='_blank'&gt;"</span> + <span class="string">"&gt; "</span> + data_title + <span class="string">"&lt;/a&gt;"</span>;</div><div class="line">                        <span class="keyword">var</span> content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>, <span class="string">""</span>);</div><div class="line">                        <span class="keyword">if</span> (first_occur &gt;= <span class="number">0</span>) &#123;</div><div class="line">                            <span class="comment">// cut out characters</span></div><div class="line">                            <span class="keyword">var</span> start = first_occur - <span class="number">6</span>;</div><div class="line">                            <span class="keyword">var</span> end = first_occur + <span class="number">6</span>;</div><div class="line">                            <span class="keyword">if</span> (start &lt; <span class="number">0</span>) &#123;</div><div class="line">                                start = <span class="number">0</span>;</div><div class="line">                            &#125;</div><div class="line">                            <span class="keyword">if</span> (start == <span class="number">0</span>) &#123;</div><div class="line">                                end = <span class="number">10</span>;</div><div class="line">                            &#125;</div><div class="line">                            <span class="keyword">if</span> (end &gt; content.length) &#123;</div><div class="line">                                end = content.length;</div><div class="line">                            &#125;</div><div class="line">                            <span class="keyword">var</span> match_content = content.substr(start, end);</div><div class="line">                            <span class="comment">// highlight all keywords</span></div><div class="line">                            keywords.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">keyword</span>) </span>&#123;</div><div class="line">                                <span class="keyword">var</span> regS = <span class="keyword">new</span> <span class="built_in">RegExp</span>(keyword, <span class="string">"gi"</span>);</div><div class="line">                                match_content = match_content.replace(regS, <span class="string">"&lt;em class=\"search-keyword\"&gt;"</span> + keyword + <span class="string">"&lt;/em&gt;"</span>);</div><div class="line">                            &#125;)</div><div class="line">                            str += <span class="string">"&lt;p class=\"search-result\"&gt;"</span> + match_content + <span class="string">"...&lt;/p&gt;"</span></div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                $resultContent.innerHTML = str;</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> inputArea = <span class="built_in">document</span>.querySelector(<span class="string">"#search-input"</span>);</div><div class="line"><span class="keyword">var</span> $resultArea = $(<span class="string">"#search-result"</span>);</div><div class="line">inputArea.onfocus = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> path = <span class="string">"/search.xml"</span>;</div><div class="line">    searchFunc(path, <span class="string">'search-input'</span>, <span class="string">'search-result'</span>);</div><div class="line">&#125;</div><div class="line">inputArea.onkeydown = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (event.keyCode == <span class="number">13</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">resetSearch = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    $resultArea.html(<span class="string">""</span>);</div><div class="line">    $(<span class="string">".no-result"</span>).hide();</div><div class="line">&#125;</div><div class="line">$resultArea.bind(<span class="string">"DOMNodeRemoved DOMNodeInserted"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!$(e.target).text()) &#123;</div><div class="line">        $(<span class="string">".no-result"</span>).show(<span class="number">200</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        $(<span class="string">".no-result"</span>).hide();</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p></p><p>将search.js放入到<code>\themes\cactus-dark\source\js</code>文件夹下，为了调用js需要在<code>\themes\cactus-dark\layout\_partial\scripts.ejs</code>添加引入：<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;% if (page.layout === &apos;search&apos;) &#123; %&gt;</div><div class="line">    &lt;%- js(&apos;js/search.js&apos;) %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure><p></p><p>使用hexo命令新建search页面，<code>hexo new page search</code>，会生成<code>\source\search\index.md</code>，在index.md添加yaml标记,表示此页面渲染使用search模板：<br></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">layout:</span> <span class="string">search</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure><p></p><p>最后依此使用<code>hexo generate</code>和<code>hexo server</code>命令，访问<code>http://localhost:4000/search/</code>便可以进行搜索了。</p><h1 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h1><p>如果你不想折腾话，我已将添加了搜索功能pull到了<a href="https://github.com/probberechts/cactus-dark" target="_blank" rel="external">cactus-dark</a>，你可以根据cactus-dark的说明直接开始使用。</p>]]></content>
@@ -285,15 +296,15 @@ EXAMPLES:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
-            <tag> recon </tag>
-            
-            <tag> kali linux </tag>
-            
             <tag> enumeration </tag>
+            
+            <tag> recon </tag>
             
             <tag> nbtscan-unixwiz </tag>
             
@@ -317,15 +328,15 @@ EXAMPLES:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
+            
+            <tag> enumeration </tag>
             
             <tag> recon </tag>
             
-            <tag> kali linux </tag>
-            
             <tag> reporting </tag>
-            
-            <tag> enumeration </tag>
             
             <tag> metagoofil </tag>
             
@@ -431,13 +442,13 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> portscanning </tag>
             
@@ -461,11 +472,11 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> portscanning </tag>
             
@@ -497,11 +508,11 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> webapps </tag>
             
@@ -525,15 +536,15 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
-            <tag> recon </tag>
-            
-            <tag> kali linux </tag>
-            
             <tag> sniffing </tag>
+            
+            <tag> recon </tag>
             
             <tag> spoofing </tag>
             
@@ -559,13 +570,13 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> evasion </tag>
             
@@ -589,13 +600,13 @@ python cheetah.py
         
         <tags>
             
-            <tag> information gathering </tag>
-            
-            <tag> recon </tag>
-            
             <tag> kali linux </tag>
             
+            <tag> information gathering </tag>
+            
             <tag> enumeration </tag>
+            
+            <tag> recon </tag>
             
             <tag> portscanning </tag>
             
@@ -628,11 +639,11 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> spoofing </tag>
             
@@ -656,11 +667,11 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> goofile </tag>
             
@@ -682,11 +693,11 @@ python cheetah.py
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> golismero </tag>
             
@@ -2388,13 +2399,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> c语言 </tag>
-            
             <tag> socket programming </tag>
             
             <tag> c </tag>
             
             <tag> socket编程练习 </tag>
+            
+            <tag> c语言 </tag>
             
             <tag> thread specific data </tag>
             
@@ -2418,13 +2429,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> c语言 </tag>
-            
             <tag> socket programming </tag>
             
             <tag> c </tag>
             
             <tag> socket编程练习 </tag>
+            
+            <tag> c语言 </tag>
             
             <tag> 多线程服务器 </tag>
             
@@ -2448,13 +2459,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> c语言 </tag>
-            
             <tag> socket programming </tag>
             
             <tag> c </tag>
             
             <tag> socket编程练习 </tag>
+            
+            <tag> c语言 </tag>
             
             <tag> multi process server </tag>
             
@@ -2478,17 +2489,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> c语言 </tag>
-            
-            <tag> udp socket </tag>
-            
-            <tag> udp套接字 </tag>
-            
             <tag> socket programming </tag>
             
             <tag> c </tag>
             
             <tag> socket编程练习 </tag>
+            
+            <tag> c语言 </tag>
+            
+            <tag> udp socket </tag>
+            
+            <tag> udp套接字 </tag>
             
         </tags>
         
@@ -2586,17 +2597,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> c语言 </tag>
+            <tag> tcp socket </tag>
             
             <tag> socket programming </tag>
+            
+            <tag> tcp套接字 </tag>
             
             <tag> c </tag>
             
             <tag> socket编程练习 </tag>
             
-            <tag> tcp socket </tag>
-            
-            <tag> tcp套接字 </tag>
+            <tag> c语言 </tag>
             
         </tags>
         
@@ -2616,11 +2627,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> wireless attacks </tag>
             
@@ -2646,13 +2657,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> evasion </tag>
             
@@ -2676,11 +2687,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> fragroute </tag>
             
@@ -2704,13 +2715,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> 路由跟踪工具 </tag>
             
@@ -2734,17 +2745,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
             
-            <tag> kali linux </tag>
+            <tag> dns </tag>
             
             <tag> fierce </tag>
-            
-            <tag> dns </tag>
             
         </tags>
         
@@ -2764,15 +2775,15 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
-            <tag> recon </tag>
-            
-            <tag> kali linux </tag>
-            
             <tag> enumeration </tag>
+            
+            <tag> recon </tag>
             
             <tag> voip </tag>
             
@@ -2796,15 +2807,15 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
-            <tag> recon </tag>
-            
-            <tag> kali linux </tag>
-            
             <tag> enumeration </tag>
+            
+            <tag> recon </tag>
             
             <tag> smb </tag>
             
@@ -2828,13 +2839,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> dotdotpwn </tag>
             
@@ -2860,13 +2871,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> dns </tag>
             
@@ -2890,13 +2901,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> dns </tag>
             
@@ -2920,19 +2931,19 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
             
-            <tag> kali linux </tag>
-            
-            <tag> dns </tag>
-            
             <tag> 子域爆破 </tag>
             
             <tag> dnsrecon </tag>
+            
+            <tag> dns </tag>
             
         </tags>
         
@@ -2952,17 +2963,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
             
-            <tag> kali linux </tag>
+            <tag> 子域爆破 </tag>
             
             <tag> dns </tag>
-            
-            <tag> 子域爆破 </tag>
             
             <tag> dnsmap </tag>
             
@@ -2984,13 +2995,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> dns </tag>
             
@@ -3016,13 +3027,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> 端口扫描 </tag>
             
@@ -3050,13 +3061,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> dmitry </tag>
             
@@ -3082,9 +3093,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> information gathering </tag>
-            
             <tag> kali linux </tag>
+            
+            <tag> information gathering </tag>
             
             <tag> snmp </tag>
             
@@ -3112,11 +3123,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> 嗅探 </tag>
             
@@ -3146,11 +3157,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> cdpsnarf </tag>
             
@@ -3180,11 +3191,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> 嗅探 </tag>
             
@@ -3216,6 +3227,8 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
@@ -3223,8 +3236,6 @@ if __name__ == &apos;__main__&apos;:
             <tag> casefile </tag>
             
             <tag> recon </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> reporting </tag>
             
@@ -3248,11 +3259,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> enumeration </tag>
             
@@ -3280,17 +3291,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
             
-            <tag> kali linux </tag>
-            
             <tag> enumeration </tag>
             
-            <tag> 枚举 </tag>
-            
             <tag> osint </tag>
+            
+            <tag> 枚举 </tag>
             
             <tag> bing-ip2hosts </tag>
             
@@ -3312,11 +3323,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
+            <tag> kali linux </tag>
+            
             <tag> information gathering </tag>
             
             <tag> 信息收集 </tag>
-            
-            <tag> kali linux </tag>
             
             <tag> automater </tag>
             
@@ -3338,13 +3349,13 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> information gathering </tag>
-            
             <tag> kali linux </tag>
             
             <tag> 扫描工具 </tag>
             
             <tag> amap </tag>
+            
+            <tag> information gathering </tag>
             
             <tag> amapcrap </tag>
             
@@ -3366,9 +3377,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> information gathering </tag>
-            
             <tag> kali linux </tag>
+            
+            <tag> information gathering </tag>
             
             <tag> cdp </tag>
             
@@ -3396,9 +3407,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> information gathering </tag>
-            
             <tag> kali linux </tag>
+            
+            <tag> information gathering </tag>
             
             <tag> smb </tag>
             
@@ -3409,35 +3420,6 @@ if __name__ == &apos;__main__&apos;:
             <tag> acccheck </tag>
             
             <tag> password attack </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[CSAW CTF Qualification Round 2013 Web 200 Nevernote]]></title>
-      <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/</url>
-      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x5b;&#110;&#x65;&#118;&#101;&#114;&#x6e;&#111;&#x74;&#x65;&#97;&#100;&#109;&#105;&#110;&#x40;&#x6e;&#x65;&#x76;&#x65;&#x72;&#110;&#111;&#x74;&#x65;&#46;&#99;&#x6f;&#x6d;&#x5d;&#x5b;&#50;&#x5d;">&#x5b;&#110;&#x65;&#118;&#101;&#114;&#x6e;&#111;&#x74;&#x65;&#97;&#100;&#109;&#105;&#110;&#x40;&#x6e;&#x65;&#x76;&#x65;&#x72;&#110;&#111;&#x74;&#x65;&#46;&#99;&#x6f;&#x6d;&#x5d;&#x5b;&#50;&#x5d;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> CTF </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ctf </tag>
-            
-            <tag> web </tag>
-            
-            <tag> csaw ctf qualification round 2013 </tag>
-            
-            <tag> referer </tag>
-            
-            <tag> nevernote </tag>
             
         </tags>
         
@@ -3464,11 +3446,40 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> csaw ctf qualification round 2013 </tag>
             
-            <tag> cookie </tag>
-            
             <tag> writeup </tag>
             
+            <tag> cookie </tag>
+            
             <tag> guess harder </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSAW CTF Qualification Round 2013 Web 200 Nevernote]]></title>
+      <url>/2016/08/19/CSAW-CTF-Qualification-Round-2013--Web-200-Nevernote/</url>
+      <content type="html"><![CDATA[<h2 id="0x00-题目"><a href="#0x00-题目" class="headerlink" title="0x00 题目"></a>0x00 题目</h2><blockquote><p>来自网站<a href="http://128.238.66.214" target="_blank" rel="external">http://128.238.66.214</a>的管理员Nevernote Admin<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#91;&#x6e;&#101;&#118;&#101;&#x72;&#110;&#x6f;&#x74;&#x65;&#97;&#x64;&#x6d;&#x69;&#110;&#x40;&#110;&#x65;&#x76;&#x65;&#114;&#110;&#x6f;&#116;&#x65;&#x2e;&#x63;&#111;&#109;&#x5d;&#x5b;&#50;&#93;">&#91;&#x6e;&#101;&#118;&#101;&#x72;&#110;&#x6f;&#x74;&#x65;&#97;&#x64;&#x6d;&#x69;&#110;&#x40;&#110;&#x65;&#x76;&#x65;&#114;&#110;&#x6f;&#116;&#x65;&#x2e;&#x63;&#111;&#109;&#x5d;&#x5b;&#50;&#93;</a><br>发往邮箱<a href="mailto:challenger@ctf.isis.poly.edu" target="_blank" rel="external">challenger@ctf.isis.poly.edu</a><br>时间:2013年9月19日 星期四 15:05<br>主题:求助</p><p>亲爱的小伙伴:<br>邪恶的黑客已经控制了我的Nevernote网站服务器并且锁定了我的管理帐户是我不能登入，我正在尝试恢复访问，你有没有办法登入我的帐户帮我把notes保存下来吗？虽说网站的安全性较高，但是对于你应该没有问题，我看好你，加油！<br>…………………………………………………………………………………………………………………………谢谢，Nevernote网站管理员</p></blockquote><h2 id="0x01-解题"><a href="#0x01-解题" class="headerlink" title="0x01 解题"></a>0x01 解题</h2><a id="more"></a><p>访问网站后出现一个登陆界面:</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/925421122.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote login.png"></p><p>注册后登陆后，浏览网站所有页面后发现有两个基本功能：</p><blockquote><p>1.可以在不同用户互发消息<br>2.用户可以进行笔记创建编辑等</p></blockquote><p>最开始以为是针对这两个功能进行突破，不过搞了好久并没有什么收获，不过发现了一个值得注意的地方，不管进行什么操作，总会加上一堆长hash值且hash值一直不变，后来给了提示:Nevernote管理员会检查链接，于是便想到了。</p><p>我们通过发送消息的功能给admin发送一个链接(比如自己的博客地址)，然后管理员就会收消息访问链接，于是我们查看博客的访问日志中的来源记录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">128.238.66.214 - - [21/Sep/2013:16:07:29 +0400] &quot;GET / HTTP/1.1&quot; 200 28060 &quot;http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q</div><div class="line">%3D&quot; &quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&quot;</div></pre></td></tr></table></figure><p>于是构造请求，在Header里加入:<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Referer:http://128.238.66.214</div><div class="line">/viewmessage.php?enc=zhc5qxq0UHeCENSowZ4i83LOuwP2xOeusmD%2BMwnG5JGRoG7ROrUWg%2BhIAMgqJJqefNt15FII51eu1</div><div class="line">op1W9yMjKq9Yrhn%2BkI0wt09sVMnqrMflOeyWwwb2MNBFxGPKRTM%2FSziEOtH1mZmVH%2Fh9Vu%2Bc3ipeAXjkFMpilOSpUPCD4Q%3D</div></pre></td></tr></table></figure><p></p><p>成功登入，然后看到key的note，打开得到flag：</p><p><img src="https://www.hackfun.org/usr/uploads/2016/08/663842805.png" alt="CSAW CTF Qualification Round 2013 Web 200 Nevernote key.png"></p><pre><code>key{akjdsf98LolCats234lkas0!#@%23Ferrari134545!@#250saDucati9dfL$Jdc09234lkjasf}
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ctf </tag>
+            
+            <tag> web </tag>
+            
+            <tag> csaw ctf qualification round 2013 </tag>
+            
+            <tag> referer </tag>
+            
+            <tag> nevernote </tag>
             
         </tags>
         
@@ -3497,9 +3508,9 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> csaw ctf qualification round 2013 </tag>
             
-            <tag> writeup </tag>
-            
             <tag> trivia </tag>
+            
+            <tag> writeup </tag>
             
             <tag> google </tag>
             
@@ -3529,13 +3540,13 @@ if __name__ == &apos;__main__&apos;:
             
             <tag> csaw ctf qualification round 2013 </tag>
             
-            <tag> miscellaneous </tag>
-            
             <tag> 康威生命游戏 </tag>
             
             <tag> conway&#39;s game of life </tag>
             
             <tag> socket编程 </tag>
+            
+            <tag> miscellaneous </tag>
             
         </tags>
         
@@ -3679,9 +3690,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> web </tag>
             
@@ -3705,17 +3716,17 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
             
-            <tag> web </tag>
+            <tag> backdoor ctf 2013 </tag>
             
-            <tag> 布尔型盲注 </tag>
+            <tag> web </tag>
             
             <tag> data </tag>
             
             <tag> sqlmap </tag>
+            
+            <tag> 布尔型盲注 </tag>
             
         </tags>
         
@@ -3735,9 +3746,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> web </tag>
             
@@ -3765,8 +3776,6 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
             
             <tag> 穷举法 </tag>
@@ -3774,6 +3783,8 @@ if __name__ == &apos;__main__&apos;:
             <tag> crypto </tag>
             
             <tag> 密文破译 </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> 密码学 </tag>
             
@@ -3795,11 +3806,11 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> sqlite injection </tag>
+            <tag> ctf </tag>
             
             <tag> backdoor ctf 2013 </tag>
             
-            <tag> ctf </tag>
+            <tag> sqlite injection </tag>
             
             <tag> web </tag>
             
@@ -3821,9 +3832,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> misc </tag>
             
@@ -3875,9 +3886,9 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> web </tag>
             
@@ -3899,15 +3910,15 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> misc </tag>
             
-            <tag> forensics </tag>
-            
             <tag> 电子取证 </tag>
+            
+            <tag> forensics </tag>
             
         </tags>
         
@@ -3927,15 +3938,15 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> misc </tag>
             
-            <tag> forensics </tag>
-            
             <tag> 电子取证 </tag>
+            
+            <tag> forensics </tag>
             
         </tags>
         
@@ -3955,15 +3966,15 @@ if __name__ == &apos;__main__&apos;:
         
         <tags>
             
-            <tag> backdoor ctf 2013 </tag>
-            
             <tag> ctf </tag>
+            
+            <tag> backdoor ctf 2013 </tag>
             
             <tag> misc </tag>
             
-            <tag> forensics </tag>
-            
             <tag> 电子取证 </tag>
+            
+            <tag> forensics </tag>
             
         </tags>
         
