@@ -1227,14 +1227,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/enumeration/</loc>
+        <loc>https://hackfun.org/tags/recon/</loc>
         <lastmod>2017-10-02T19:22:31.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/recon/</loc>
+        <loc>https://hackfun.org/tags/enumeration/</loc>
         <lastmod>2017-10-02T19:22:31.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1472,14 +1472,14 @@
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/crc-error-in-chunk-ihdr/</loc>
+        <loc>https://hackfun.org/tags/steganography/</loc>
         <lastmod>2017-10-02T19:50:53.240Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hackfun.org/tags/steganography/</loc>
+        <loc>https://hackfun.org/tags/crc-error-in-chunk-ihdr/</loc>
         <lastmod>2017-10-02T19:50:53.240Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1809,21 +1809,21 @@
 
     <url>
         <loc>https://hackfun.org/tags/cheetah/</loc>
-        <lastmod>2018-04-26T08:33:54.317Z</lastmod>
+        <lastmod>2018-04-26T08:36:45.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hackfun.org/tags/cheetah-gui/</loc>
-        <lastmod>2018-04-26T08:33:54.317Z</lastmod>
+        <lastmod>2018-04-26T08:36:45.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hackfun.org/tags/webshell-password-cracker/</loc>
-        <lastmod>2018-04-26T08:33:54.317Z</lastmod>
+        <lastmod>2018-04-26T08:36:45.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
